@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
   <script src="https://kit.fontawesome.com/2fcf18ca31.js" crossorigin="anonymous"></script>
-  <title>Full-Stack Web Developer</title>
+  <title>Front-End Web Developer</title>
 </head>
 
 <body>
@@ -46,7 +46,7 @@
         <h1>Hello, <span></span></h1>
         <h1>My Name is, <span></span></h1>
         <h1>Bright okoro .c, <span></span></h1>
-        <h1>Full-Stack Web Developer. <span></span></h1>
+        <h1>Front-End Web Developer. <span></span></h1>
         <a href="#projects" type="button" class="cta">Portfolio</a>
       </div>
     </div>
@@ -218,7 +218,7 @@
     <div class="about container">
       <div class="col-left">
         <div class="about-img">
-          <img src="./img/meinwhite.jpg" alt="img">
+          <img src="./img/no_2.png" alt="img">
         </div>
       </div>
       <div class="col-right">
@@ -226,7 +226,7 @@
         <h2>Web Developer</h2>
         <p>I'm okoro chimezie bright , I love human development , education ,
           technology , i have great passion in mathematics , data analysis and web development.</p>
-        <a href="./img/okoro chimezie bright resume2.pdf"  target="_blank" class="cta">Download Resume</a>
+        <a href="./img/Okoro-Bright.pdf"  target="_blank" class="cta">Download Resume</a>
       </div>
     </div>
 
@@ -269,18 +269,18 @@
 
       </div>
 
-      <h2>PYTHON</h2>
+      <h2>TAILWIND CSS</h2>
       <div class="progress-bar">
         <div class="bootstrap"><span>70%</span> </div>
       </div>
 
-      <h2>DJANGO</h2>
+      <h2>DOCKER</h2>
       <div class="progress-bar">
         <div class="bootstrap"><span>70%</span> </div>
 
       </div>
 
-      <h2>POSTGRESQL</h2>
+      <h2>FIGMA</h2>
       <div class="progress-bar">
         <div class="bootstrap"><span>70%</span> </div>
 
@@ -444,14 +444,20 @@
         </div>
         <div class="social-item">
           <a href="https://www.linkedin.com/in/chimezie-okoro-767581107/" target="_blank"><img src="./img/icons8-linkedin-64.png" /></a>
-         
-        </div>
+         </div>
       </div>
-      <p> © 2022[DataWeb], All rights reserved.</p>
+      <p> ©  [DataWeb], All rights reserved.</p>
+      <p id="demo"></p>
+
+      <script>
+        const currentYear = new Date().getFullYear();
+        document.getElementById("demo").innerHTML = currentYear;
+        </script>
     </div>
   </section>
   <!-- End Footer -->
   <script src="./app.js"></script>
-</body>
+  
+  </body>
 
 </html>
