@@ -1,0 +1,20 @@
+# Core
+node_modules/
+dist/
+
+# Local dev env
+.env.local
+.env.*.local
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log

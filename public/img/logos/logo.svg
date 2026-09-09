@@ -1,0 +1,13 @@
+<!-- Chimezie Bright — Static Portfolio Logo (placeholder — replace with your brand logo) -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 60" fill="none">
+  <!-- Left bracket icon -->
+  <rect rx="6" width="52" height="40" fill="#06b6d4"/>
+  <text x="15" y="30" font-size="20" font-family="monospace" font-weight="700" fill="white">&lt;</text>
+
+  <!-- Name text -->
+  <text x="62" y="34" font-size="26" font-family="'Plus Jakarta Sans', sans-serif" font-weight="800" fill="#f4f4f5">CB</text>
+
+  <!-- Right bracket -->
+  <rect x="128" y="10" width="42" height="40" rx="6" fill="#8b5cf6"/>
+  <text x="148" y="37" font-size="20" font-family="monospace" font-weight="700" fill="white">/&gt;</text>
+</svg>
