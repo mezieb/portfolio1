@@ -1,0 +1,28 @@
+{
+  "name": "Chimezie Bright — Full Stack Software Engineer",
+  "short_name": "CB Portfolio",
+  "description": "Portfolio of Okoro Chimezie Bright, Full Stack Software Engineer based in Hanoi, Vietnam.",
+  "id": "/",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "lang": "en-US",
+  "background_color": "#09090b",
+  "theme_color": "#09090b",
+  "categories": ["portfolio", "professional", "technology"],
+  "icons": [
+    {
+      "src": "/img/logos/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/img/brand/logo.jpg",
+      "sizes": "512x384",
+      "type": "image/jpeg",
+      "purpose": "any"
+    }
+  ]
+}

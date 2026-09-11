@@ -1,0 +1,71 @@
+# =============================================================================
+# Netlify configuration — webecomtech.com
+# Docs: https://docs.netlify.com/configure-builds/file-based-configuration/
+# =============================================================================
+
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "20"
+
+# -----------------------------------------------------------------------------
+# Security headers (zero-risk set — safe to ship as-is)
+# -----------------------------------------------------------------------------
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "geolocation=(), microphone=(), camera=(), payment=(), usb=()"
+    # Deliberately "0": the legacy X-XSS-Protection auditor is deprecated and
+    # its heuristics introduce vulnerabilities in older browsers.
+    X-XSS-Protection = "0"
+
+# -----------------------------------------------------------------------------
+# Cache policy
+# -----------------------------------------------------------------------------
+# Vite emits content-hashed filenames, so these are immutable forever.
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/img/*"
+  [headers.values]
+    Cache-Control = "public, max-age=604800, stale-while-revalidate=86400"
+
+[[headers]]
+  for = "/resume/*"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"
+
+# index.html must never be cached, or visitors will pin an old asset hash.
+[[headers]]
+  for = "/"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+# -----------------------------------------------------------------------------
+# Content-Security-Policy — ENABLE AFTER TESTING ON A DEPLOY PREVIEW
+# -----------------------------------------------------------------------------
+# Left commented out on purpose: a mis-tuned CSP takes the whole site down and
+# cannot be validated from a local build. To enable:
+#   1. Uncomment the line below.
+#   2. Deploy to a Netlify preview URL.
+#   3. Check the browser console for any CSP violation.
+#   4. Only then merge to production.
+#
+# 'unsafe-inline' is required for script-src because index.html carries an
+# inline pre-paint theme script (it prevents a flash of the wrong theme).
+#
+# Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; form-action 'self'; frame-ancestors 'none'; base-uri 'self'; object-src 'none'"
+
+# -----------------------------------------------------------------------------
+# Forms
+# -----------------------------------------------------------------------------
+[build.processing.html]
+  pretty_urls = true

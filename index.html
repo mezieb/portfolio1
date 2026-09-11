@@ -1,215 +1,1217 @@
 <!DOCTYPE html>
-<html lang="en" class="dark">
+<html lang="en">
+
 <head>
-  <!-- Meta Tags -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
-  <!-- SEO Meta -->
-  <title>Chimezie Bright — Full Stack Software Engineer</title>
-  <meta name="description" content="Okoro Chimezie Bright, a professional Full Stack Software Engineer based in Vietnam. Build modern web applications with React, Next.js, Node.js, and more. View my project portfolio." />
-  <meta name="keywords" content="software engineer, full stack developer, web developer, React, Next.js, Node.js, portfolio, frontend developer, backend developer, Docker" />
+  <!-- ===== Primary SEO ===== -->
+  <title>Chimezie Bright — Full Stack Software Engineer | Webecom Tech</title>
+  <meta name="description"
+    content="Okoro Chimezie Bright is a Full Stack Software Engineer in Hanoi, Vietnam building scalable web applications with React, Next.js, Node.js, TypeScript, PostgreSQL and Docker. View projects, skills and client testimonials." />
+  <meta name="keywords"
+    content="Chimezie Bright, Okoro Chimezie Bright, software engineer, full stack developer, web developer Vietnam, React developer, Next.js, Node.js, TypeScript, PostgreSQL, Docker, Hanoi, portfolio" />
   <meta name="author" content="Okoro Chimezie Bright" />
-  <meta name="robots" content="index, follow" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+  <link rel="canonical" href="https://webecomtech.com/" />
 
-  <!-- Open Graph / Social -->
-  <meta property="og:type" content="website" />
+  <!-- ===== Open Graph ===== -->
+  <meta property="og:type" content="profile" />
+  <meta property="og:site_name" content="Chimezie Bright — Portfolio" />
+  <meta property="og:locale" content="en_US" />
   <meta property="og:url" content="https://webecomtech.com/" />
   <meta property="og:title" content="Chimezie Bright — Full Stack Software Engineer" />
-  <meta property="og:description" content="Professional software engineer portfolio. Build modern web applications with React, Next.js, Node.js, and more." />
-  <meta property="og:image" content="/social-preview.jpg" />
+  <meta property="og:description"
+    content="Full Stack Software Engineer building modern, scalable web applications with React, Next.js, Node.js and TypeScript. Based in Hanoi, Vietnam." />
+  <meta property="og:image" content="https://webecomtech.com/social-preview.jpg" />
+  <meta property="og:image:secure_url" content="https://webecomtech.com/social-preview.jpg" />
+  <meta property="og:image:type" content="image/jpeg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Chimezie Bright — Full Stack Software Engineer" />
+  <meta property="profile:first_name" content="Chimezie" />
+  <meta property="profile:last_name" content="Bright" />
 
-  <!-- Twitter Card -->
+  <!-- ===== Twitter Card ===== -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:url" content="https://webecomtech.com/" />
   <meta name="twitter:title" content="Chimezie Bright — Full Stack Software Engineer" />
-  <meta name="twitter:description" content="Professional software engineer portfolio. Build modern web applications with React, Next.js, Node.js, and more." />
+  <meta name="twitter:description"
+    content="Full Stack Software Engineer building modern, scalable web applications with React, Next.js, Node.js and TypeScript. Based in Hanoi, Vietnam." />
+  <meta name="twitter:image" content="https://webecomtech.com/social-preview.jpg" />
+  <meta name="twitter:image:alt" content="Chimezie Bright — Full Stack Software Engineer" />
+  <!-- ===== Browser chrome ===== -->
+  <meta id="theme-color" name="theme-color" content="#09090b" />
+  <meta name="color-scheme" content="dark light" />
+  <meta name="application-name" content="Chimezie Bright" />
+  <meta name="apple-mobile-web-app-title" content="Chimezie Bright" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="format-detection" content="telephone=no" />
 
-  <!-- Favicon -->
+  <!-- ===== Icons & manifest ===== -->
   <link rel="icon" type="image/svg+xml" href="/img/logos/logo.svg" />
+  <link rel="alternate icon" type="image/jpeg" href="/img/brand/logo.jpg" />
   <link rel="apple-touch-icon" sizes="180x180" href="/img/logos/apple-touch-icon.png" />
+  <link rel="manifest" href="/manifest.webmanifest" />
 
-  <!-- Fonts -->
+  <!-- ===== Fonts (loaded non-blocking to avoid a render-blocking request) ===== -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="preload" as="style"
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" />
+  <link rel="stylesheet" media="print" onload="this.media='all'"
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" />
+  <noscript>
+    <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" />
+  </noscript>
+  <!-- ===== Structured data ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Person",
+        "@id": "https://webecomtech.com/#person",
+        "name": "Okoro Chimezie Bright",
+        "alternateName": "Chimezie Bright",
+        "jobTitle": "Full Stack Software Engineer",
+        "description": "Full Stack Software Engineer specialising in React, Next.js, Node.js and TypeScript.",
+        "url": "https://webecomtech.com/",
+        "image": "https://webecomtech.com/img/profile/hero-photo.jpg",
+        "email": "mailto:okorobright13@gmail.com",
+        "telephone": "+84-125-218-1203",
+        "address": { "@type": "PostalAddress", "addressLocality": "Hanoi", "addressCountry": "VN" },
+        "sameAs": [
+          "https://github.com/mezieb",
+          "https://www.linkedin.com/in/chimezie-okoro-767581107/"
+        ],
+        "knowsAbout": [
+          "JavaScript", "TypeScript", "React", "Next.js", "Node.js", "Express",
+          "PostgreSQL", "MongoDB", "Docker", "Tailwind CSS", "REST APIs", "Git"
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://webecomtech.com/#website",
+        "url": "https://webecomtech.com/",
+        "name": "Chimezie Bright — Full Stack Software Engineer",
+        "inLanguage": "en-US",
+        "publisher": { "@id": "https://webecomtech.com/#person" }
+      }
+    ]
+  }
+  </script>
+
+  <!-- ===== Theme boot: runs before first paint to prevent a flash of the wrong
+       theme, and marks <html> with `.js` so reveal/skill animations only hide
+       content when scripting is genuinely available. ===== -->
+  <script>
+    (function () {
+      var root = document.documentElement;
+      root.classList.add('js');
+      var dark = true;
+      try {
+        var saved = localStorage.getItem('theme-mode');
+        dark = saved ? saved === 'dark'
+          : !window.matchMedia('(prefers-color-scheme: light)').matches;
+      } catch (e) { /* storage blocked — keep site default (dark) */ }
+      root.classList.toggle('dark', dark);
+      var meta = document.getElementById('theme-color');
+      if (meta) { meta.setAttribute('content', dark ? '#09090b' : '#ffffff'); }
+    })();
+  </script>
 
   <script type="module" src="/src/main.ts"></script>
 </head>
-<body class="bg-[var(--bg-primary)] text-[var(--text-primary)] dark">
 
-  <!-- ========= Layout Shell ===== -->
-  <div id="root-app">
-    <!-- Header rendered by App.svelte equivalent, but in vanilla TS we do it manually -->
-    <header id="main-header" class="fixed top-0 left-0 w-full z-50 transition-[background-color,border,color] duration-300 border-b border-transparent">
-      <div class="container-custom h-16 flex items-center justify-between">
+<body class="bg-[var(--bg-primary)] text-[var(--text-primary)] antialiased">
 
-        <!-- Brand -->
-        <a href="#hero" class="flex items-center gap-2 text-xl font-bold gradient-text">
-          <span class="text-lg font-mono">&lt;</span>CB<span class="text-lg font-mono">/&gt;</span>
-        </a>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  <!-- ========= Header ========= -->
+  <header id="main-header" class="fixed top-0 left-0 w-full z-50">
+    <div class="container-custom h-16 flex items-center justify-between gap-4">
 
-        <!-- Desktop Nav -->
-        <nav id="desktop-nav" class="hidden md:flex items-center gap-8">
-          <a href="#about" class="text-sm text-[var(--text-secondary)] hover:text-[var(--accent)] transition-colors font-medium">About</a>
-          <a href="#skills" class="text-sm text-[var(--text-secondary)] hover:text-[var(--accent)] transition-colors font-medium">Skills</a>
-          <a href="#experience" class="text-sm text-[var(--text-secondary)] hover:text-[var(--accent)] transition-colors font-medium">Experience</a>
-          <a href="#projects" class="text-sm text-[var(--text-secondary)] hover:text-[var(--accent)] transition-colors font-medium">Projects</a>
-          <a href="#contact" class="text-sm text-[var(--text-secondary)] hover:text-[var(--accent)] transition-colors font-medium">Contact</a>
+      <!-- Brand -->
+      <a href="#hero" class="flex items-center gap-1 text-xl font-extrabold gradient-text shrink-0"
+        aria-label="Chimezie Bright — back to top">
+        <span class="font-mono">&lt;</span>CB<span class="font-mono">/&gt;</span>
+      </a>
 
-          <!-- Dark/Light Toggle -->
-          <button id="theme-toggle" type="button" aria-label="Toggle theme" class="w-9 h-9 flex items-center justify-center rounded-full border border-[var(--border-color)] hover:border-[var(--accent)] transition-colors">
-            ☾
-          </button>
+      <!-- Desktop navigation -->
+      <nav id="desktop-nav" aria-label="Primary" class="hidden md:flex items-center gap-7">
+        <a href="#about" class="nav-link" data-nav="about">About</a>
+        <a href="#skills" class="nav-link" data-nav="skills">Skills</a>
+        <a href="#experience" class="nav-link" data-nav="experience">Experience</a>
+        <a href="#projects" class="nav-link" data-nav="projects">Projects</a>
+        <a href="#testimonials" class="nav-link" data-nav="testimonials">Testimonials</a>
+        <a href="#contact" class="nav-link" data-nav="contact">Contact</a>
 
-          <!-- CTA -->
-          <a href="#contact" class="gradient-btn px-5 py-2 text-sm">Let's Talk</a>
-        </nav>
+        <button id="theme-toggle" type="button" class="icon-btn" aria-label="Toggle colour theme"
+          aria-pressed="true">
+          <svg class="theme-icon theme-icon--moon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+          </svg>
+          <svg class="theme-icon theme-icon--sun" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+            <circle cx="12" cy="12" r="5" />
+            <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" />
+          </svg>
+        </button>
 
-        <!-- Mobile Menu Button -->
-        <div class="md:hidden flex items-center gap-3">
-          <button id="theme-toggle-mobile" type="button" aria-label="Toggle theme" class="w-9 h-9 flex items-center justify-center rounded-full border border-[var(--border-color)]">
-            ☾
-          </button>
-          <button id="mobile-menu-btn" type="button" aria-label="Open menu" aria-expanded="false" class="w-10 h-10 flex flex-col items-center justify-center gap-[5px] rounded-lg border border-[var(--border-color)]">
-            <span class="block w-5 h-[2px] bg-current transition-all duration-300 hamburger-bar"></span>
-            <span class="block w-5 h-[2px] bg-current transition-all duration-300 hamburger-bar"></span>
-          </button>
+        <a href="#contact" class="gradient-btn gradient-btn--sm">Let's Talk</a>
+      </nav>
+
+      <!-- Mobile controls -->
+      <div class="md:hidden flex items-center gap-2">
+        <button id="theme-toggle-mobile" type="button" class="icon-btn" aria-label="Toggle colour theme"
+          aria-pressed="true">
+          <svg class="theme-icon theme-icon--moon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+          </svg>
+          <svg class="theme-icon theme-icon--sun" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+            <circle cx="12" cy="12" r="5" />
+            <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" />
+          </svg>
+        </button>
+
+        <button id="mobile-menu-btn" type="button" class="icon-btn" aria-label="Open navigation menu"
+          aria-expanded="false" aria-controls="mobile-nav">
+          <span class="sr-only">Menu</span>
+          <span class="flex flex-col items-center justify-center gap-[5px]" aria-hidden="true">
+            <span class="hamburger-bar" data-bar="top"></span>
+            <span class="hamburger-bar" data-bar="bottom"></span>
+          </span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ========= Mobile navigation overlay ========= -->
+  <div id="mobile-nav" class="fixed inset-0 z-40 flex items-center justify-center md:hidden" aria-hidden="true">
+    <nav aria-label="Mobile" class="flex flex-col items-center gap-7">
+      <a href="#about" class="mobile-nav-link text-2xl font-semibold text-[var(--text-secondary)] hover:text-[var(--accent)] transition-colors">About</a>
+      <a href="#skills" class="mobile-nav-link text-2xl font-semibold text-[var(--text-secondary)] hover:text-[var(--accent)] transition-colors">Skills</a>
+      <a href="#experience" class="mobile-nav-link text-2xl font-semibold text-[var(--text-secondary)] hover:text-[var(--accent)] transition-colors">Experience</a>
+      <a href="#projects" class="mobile-nav-link text-2xl font-semibold text-[var(--text-secondary)] hover:text-[var(--accent)] transition-colors">Projects</a>
+      <a href="#testimonials" class="mobile-nav-link text-2xl font-semibold text-[var(--text-secondary)] hover:text-[var(--accent)] transition-colors">Testimonials</a>
+      <a href="#contact" class="mobile-nav-link text-2xl font-semibold text-[var(--text-secondary)] hover:text-[var(--accent)] transition-colors">Contact</a>
+      <a href="/resume/Okoro_Chimezie_Bright_Software_Engineer_CV.pdf" target="_blank" rel="noopener noreferrer"
+        class="gradient-btn gradient-btn--sm mt-2">Download CV</a>
+    </nav>
+  </div>
+  <!-- ========= Main content ========= -->
+  <main id="main-content">
+
+    <!-- ===== Hero ===== -->
+    <section id="hero" class="relative min-h-screen flex items-center overflow-hidden pt-16"
+      aria-labelledby="hero-heading">
+
+      <!-- Decorative gradient blobs -->
+      <div class="absolute inset-0 -z-10" aria-hidden="true">
+        <div class="absolute top-20 left-1/4 w-[500px] h-[500px] rounded-full opacity-20 blur-[120px] animate-pulse"
+          style="background: radial-gradient(circle, var(--gradient-start), transparent);"></div>
+        <div class="absolute bottom-20 right-1/4 w-[400px] h-[400px] rounded-full opacity-15 blur-[120px] animate-pulse"
+          style="background: radial-gradient(circle, var(--gradient-end), transparent); animation-delay: 3s;"></div>
+      </div>
+
+      <div class="container-custom flex flex-col md:flex-row items-center justify-between gap-12 lg:gap-20 py-16">
+
+        <!-- Copy -->
+        <div class="flex-1 max-w-[640px]">
+          <p class="reveal mb-4 text-[var(--accent)] font-semibold tracking-wide">
+            <span aria-hidden="true">&#128075;</span> Hello, I'm
+          </p>
+
+          <h1 id="hero-heading"
+            class="reveal reveal-delay-1 text-5xl sm:text-6xl lg:text-7xl font-extrabold leading-[1.1]">
+            <span class="gradient-text">Chimezie Bright</span>
+          </h1>
+
+          <p class="reveal reveal-delay-2 mt-5 mb-6">
+            <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-semibold"
+              style="background: var(--accent-light); color: var(--accent); border: 1px solid var(--border-color);">
+              <span class="w-2 h-2 rounded-full" aria-hidden="true"
+                style="background:#10b981; box-shadow:0 0 8px #10b981;"></span>
+              Full Stack Software Engineer
+            </span>
+          </p>
+
+          <p class="reveal reveal-delay-3 text-[var(--text-secondary)] leading-relaxed mb-8 max-w-xl">
+            I build modern, scalable web applications that deliver measurable business impact —
+            passionate about clean architecture, seamless user experiences, and turning complex
+            problems into elegant solutions.
+          </p>
+
+          <div class="reveal reveal-delay-4 flex flex-wrap items-center gap-4 mb-10">
+            <a href="#projects" class="gradient-btn">View Projects</a>
+            <a href="/resume/Okoro_Chimezie_Bright_Software_Engineer_CV.pdf" target="_blank" rel="noopener noreferrer"
+              class="gradient-btn gradient-btn--ghost">Download CV</a>
+          </div>
+
+          <!-- Tech stack — static markup so it renders without JS -->
+          <div class="reveal reveal-delay-4 flex items-start gap-3 flex-wrap">
+            <span class="text-sm text-[var(--text-secondary)] self-center">Tech stack:</span>
+            <ul id="tech-badges" class="flex items-center gap-2 flex-wrap list-none p-0 m-0">
+              <li class="tag">React</li>
+              <li class="tag">TypeScript</li>
+              <li class="tag">Next.js</li>
+              <li class="tag">Node.js</li>
+              <li class="tag">Express</li>
+              <li class="tag">PostgreSQL</li>
+              <li class="tag">MongoDB</li>
+              <li class="tag">Docker</li>
+              <li class="tag">Tailwind CSS</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Portrait -->
+        <div class="reveal reveal-delay-3 relative flex-shrink-0">
+          <div class="w-[280px] sm:w-[380px] aspect-square rounded-full overflow-hidden glass-card p-3">
+            <img id="hero-portrait" src="/img/profile/hero-photo.jpg" width="840" height="840"
+              alt="Portrait of Okoro Chimezie Bright, Full Stack Software Engineer"
+              class="w-full h-full object-cover rounded-full" fetchpriority="high" decoding="async" />
+          </div>
+          <div class="absolute -inset-3 rounded-full border-2 border-dashed opacity-40 animate-spin"
+            style="border-color: var(--gradient-start); animation-duration: 20s;" aria-hidden="true"></div>
         </div>
       </div>
-    </header>
 
-    <!-- Mobile Navigation Overlay -->
-    <div id="mobile-nav" class="fixed inset-0 z-40 flex items-center justify-center bg-[var(--bg-primary)] dark:bg-opacity-95 transform translate-x-full transition-transform duration-300 md:hidden">
-      <nav class="flex flex-col items-center gap-8">
-        <a href="#about" class="text-2xl font-semibold text-[var(--text-secondary)] hover:text-[var(--accent)] transition-colors mobile-nav-link">About</a>
-        <a href="#skills" class="text-2xl font-semibold text-[var(--text-secondary)] hover:text-[var(--accent)] transition-colors mobile-nav-link">Skills</a>
-        <a href="#experience" class="text-2xl font-semibold text-[var(--text-secondary)] hover:text-[var(--accent)] transition-colors mobile-nav-link">Experience</a>
-        <a href="#projects" class="text-2xl font-semibold text-[var(--text-secondary)] hover:text-[var(--accent)] transition-colors mobile-nav-link">Projects</a>
-        <a href="#contact" class="text-2xl font-semibold text-[var(--text-secondary)] hover:text-[var(--accent)] transition-colors mobile-nav-link">Contact</a>
-      </nav>
-    </div>
-
-    <!-- Main Content -->
-    <main id="main-content">
-
-      <!-- ========= Hero Section ========= -->
-      <section id="hero" class="min-h-screen flex items-center relative overflow-hidden pt-16">
-        <!-- Background gradient blobs -->
-        <div class="absolute inset-0 -z-10">
-          <div class="absolute top-20 left-1/4 w-[500px] h-[500px] rounded-full opacity-20 blur-[120px] animate-pulse" style="background: radial-gradient(circle, var(--gradient-start), transparent);"></div>
-          <div class="absolute bottom-20 right-1/4 w-[400px] h-[400px] rounded-full opacity-15 blur-[120px] animate-pulse" style="background: radial-gradient(circle, var(--gradient-end), transparent); animation-delay: 3s;"></div>
+      <!-- Scroll cue -->
+      <div class="absolute bottom-8 left-1/2 -translate-x-1/2 hidden sm:flex flex-col items-center gap-2 text-[var(--text-secondary)]"
+        aria-hidden="true">
+        <span class="text-xs tracking-widest uppercase">Scroll</span>
+        <div class="w-5 h-8 border-2 rounded-full flex justify-center" style="border-color: var(--text-secondary);">
+          <div class="w-1.5 h-1.5 rounded-full mt-1.5 animate-bounce" style="background: var(--accent);"></div>
         </div>
+      </div>
+    </section>
+    <!-- ===== About ===== -->
+    <section id="about" class="section-padding" aria-labelledby="about-heading">
+      <div class="container-custom">
+        <h2 id="about-heading" class="reveal text-4xl sm:text-5xl font-extrabold mb-4 text-center">
+          About <span class="gradient-text">me</span>
+        </h2>
+        <p class="reveal reveal-delay-1 text-center text-[var(--text-secondary)] max-w-2xl mx-auto mb-16">
+          Engineering background, business mindset.
+        </p>
 
-        <div class="container-custom flex flex-col md:flex-row items-center justify-between gap-12 lg:gap-20">
-          <!-- Text Content -->
-          <div class="flex-1 max-w-[640px]">
-            <p class="reveal mb-4 text-[var(--accent)] font-semibold tracking-wide">👋 Hello, I'm</p>
-            <h1 class="reveal reveal-delay-1 text-5xl sm:text-6xl lg:text-[6rem] font-extrabold leading-[1.1]">
-              <span class="gradient-text">Chimezie Bright</span>
-            </h1>
+        <div class="flex flex-col md:flex-row items-center gap-12 lg:gap-16 max-w-6xl mx-auto">
 
-            <!-- Title pill -->
-            <div class="reveal reveal-delay-2 flex items-center gap-3 mt-5 mb-6">
-              <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-semibold" style="background: var(--accent-light); color: var(--accent); border: 1px solid var(--border-color);">
-                <span class="w-2 h-2 rounded-full" style="background: #10b981; box-shadow: 0 0 8px #10b981;"></span>
-                Software Engineer
-              </span>
+          <!-- Photo -->
+          <div class="reveal reveal-delay-1 w-full max-w-[420px] flex justify-center">
+            <div class="relative group">
+              <div class="w-[260px] sm:w-[360px] aspect-[3/4] rounded-3xl overflow-hidden glass-card p-4">
+                <img src="/img/profile/about-photo.jpg" width="768" height="1024"
+                  alt="Okoro Chimezie Bright working on software development"
+                  class="w-full h-full object-cover rounded-2xl" loading="lazy" decoding="async" />
+              </div>
+              <div class="absolute -bottom-4 -right-4 w-2/3 h-2/3 rounded-2xl border-2 opacity-30"
+                style="border-color: var(--gradient-end);" aria-hidden="true"></div>
             </div>
+          </div>
 
-            <p class="reveal reveal-delay-3 text-[var(--text-secondary)] font-medium leading-relaxed mb-8 max-w-xl">
-              I build modern, scalable web applications that deliver measurable business impact. 
-              Passionate about clean code, seamless user experiences — and turning complex problems into elegant solutions.
+          <!-- Bio -->
+          <div class="reveal reveal-delay-2 flex-1 max-w-xl">
+            <p class="text-lg leading-relaxed mb-6">
+              I'm <strong>Okoro Chimezie Bright</strong>, a professional
+              <span class="gradient-text font-semibold">Software Engineer</span> based in Hanoi, Vietnam.
+              With a deep passion for mathematics, data analysis and full-stack development, I specialise
+              in building scalable applications that solve real-world problems.
             </p>
 
-            <!-- CTA Buttons -->
-            <div class="reveal reveal-delay-4 flex flex-wrap items-center gap-4 mb-10">
-              <a href="#projects" class="gradient-btn">
-                <span>🔍 View Projects</span>
-              </a>
-              <a href="/resume/Okoro_Chimezie_Bright_Software_Engineer_CV.pdf" target="_blank" rel="noopener noreferrer" class="gradient-btn gradient-btn--ghost">
-                <span>📄 Download CV</span>
-              </a>
-            </div>
+            <p class="text-base leading-relaxed mb-8 text-[var(--text-secondary)]">
+              My approach combines clean architecture with pixel-perfect delivery. I've built solutions
+              for businesses ranging from landing pages and restaurant platforms to full e-commerce
+              systems and SaaS dashboards — always focused on maintainability, performance and the
+              outcome the business actually needs.
+            </p>
 
-            <!-- Tech Stack Pills -->
-            <div class="reveal reveal-delay-4 flex items-center gap-3 flex-wrap">
-              <span class="text-sm text-[var(--text-secondary)]">Tech stack:</span>
-              <div class="flex items-center gap-2 flex-wrap" id="tech-badges"></div>
-            </div>
-          </div>
+            <!-- Stats — EDIT: adjust these figures to your real numbers -->
+            <dl class="grid grid-cols-3 gap-4 mb-8 p-6 rounded-2xl"
+              style="background: var(--bg-secondary); border: 1px solid var(--border-color);">
+              <div class="text-center">
+                <dt class="sr-only">Years of experience</dt>
+                <dd class="m-0">
+                  <span class="block text-3xl font-extrabold gradient-text" data-count-to="5"
+                    data-count-suffix="+">5+</span>
+                  <span class="text-xs uppercase tracking-wider text-[var(--text-secondary)]">Years Exp.</span>
+                </dd>
+              </div>
+              <div class="text-center" style="border-left:1px solid var(--border-color); border-right:1px solid var(--border-color);">
+                <dt class="sr-only">Projects delivered</dt>
+                <dd class="m-0">
+                  <span class="block text-3xl font-extrabold gradient-text" data-count-to="20"
+                    data-count-suffix="+">20+</span>
+                  <span class="text-xs uppercase tracking-wider text-[var(--text-secondary)]">Projects</span>
+                </dd>
+              </div>
+              <div class="text-center">
+                <dt class="sr-only">Happy clients</dt>
+                <dd class="m-0">
+                  <span class="block text-3xl font-extrabold gradient-text" data-count-to="15"
+                    data-count-suffix="+">15+</span>
+                  <span class="text-xs uppercase tracking-wider text-[var(--text-secondary)]">Clients</span>
+                </dd>
+              </div>
+            </dl>
 
-          <!-- Portrait / Illustration -->
-          <div class="reveal reveal-delay-3 relative flex-shrink-0">
-            <div class="w-[320px] sm:w-[420px] aspect-square rounded-full overflow-hidden glass-card p-3">
-              <img 
-                id="hero-portrait"
-                src="/img/profile/hero-photo.jpg" alt="Chimezie Bright - Software Engineer"
-                class="w-full h-full object-cover rounded-full"
-                loading="eager"
-              />
+            <div class="flex flex-wrap gap-4">
+              <a href="/resume/Okoro_Chimezie_Bright_Software_Engineer_CV.pdf" target="_blank"
+                rel="noopener noreferrer" class="gradient-btn gradient-btn--sm">Download CV</a>
+              <a href="#contact" class="gradient-btn gradient-btn--ghost gradient-btn--sm">Get in touch</a>
             </div>
-            <!-- Floating accent ring -->
-            <div class="absolute -inset-3 rounded-full border-2 opacity-40 animate-spin" style="border-color:var(--gradient-start); border-style:dashed; animation-duration: 20s;"></div>
           </div>
         </div>
+      </div>
+    </section>
+    <!-- ===== Skills ===== -->
+    <section id="skills" class="section-padding" style="background: var(--bg-secondary);"
+      aria-labelledby="skills-heading">
+      <div class="container-custom">
+        <h2 id="skills-heading" class="reveal text-4xl sm:text-5xl font-extrabold mb-4 text-center">
+          Technical <span class="gradient-text">skills</span>
+        </h2>
+        <p class="reveal reveal-delay-1 text-center text-[var(--text-secondary)] max-w-2xl mx-auto mb-16">
+          The stack I reach for to ship reliable, maintainable products.
+        </p>
 
-        <!-- Scroll indicator -->
-        <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-[var(--text-secondary)]">
-          <span class="text-xs tracking-widest uppercase">Scroll</span>
-          <div class="w-5 h-8 border-2 rounded-full flex justify-center" style="border-color: var(--text-secondary);">
-            <div class="w-1.5 h-1.5 rounded-full mt-1.5 animate-bounce" style="background: var(--accent);"></div>
-          </div>
-        </div>
-      </section>
+        <!-- EDIT: adjust the --level percentages to reflect your own confidence -->
+        <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto">
 
-      <!-- ===== Sections added in Phase 2 steps 2-6 below ===== -->
-
-      <!-- ========= About Section ========= -->
-      <section id="about" class="section-padding">
-        <div class="container-custom">
-          <h2 class="reveal text-4xl sm:text-5xl font-extrabold mb-16 text-center">
-            <span class="gradient-text">About</span> me
-          </h2>
-
-          <div class="flex flex-col md:flex-row items-center gap-12 lg:gap-16 max-w-6xl mx-auto">
-            <!-- Photo Side -->
-            <div class="reveal reveal-delay-1 w-full max-w-[480px] flex justify-center">
-              <div class="relative group">
-                <div class="w-[280px] sm:w-96 aspect-[3/4] rounded-3xl overflow-hidden glass-card p-4" style="border: 1px solid var(--border-color); background: var(--glass-bg); backdrop-filter: blur(16px);">
-                  <img id="about-photo" src="/img/profile/about-photo.jpg" alt="Chimezie Bright photo"
-                    class="w-full h-full object-cover rounded-2xl"
-                    loading="lazy" decoding="async"
-                  />
+          <!-- Frontend -->
+          <div class="reveal card p-7">
+            <h3 class="flex items-center gap-2 text-lg font-bold mb-6">
+              <span class="w-2.5 h-2.5 rounded-full" style="background: var(--gradient-start);"
+                aria-hidden="true"></span>
+              Frontend
+            </h3>
+            <ul class="space-y-5 list-none p-0 m-0">
+              <li>
+                <div class="flex items-center justify-between mb-2">
+                  <span class="text-sm font-semibold">HTML5 &amp; Semantics</span>
+                  <span class="text-xs text-[var(--text-secondary)]">95%</span>
                 </div>
-                <!-- Decorative accent corner -->
-                <div class="absolute -bottom-4 -right-4 w-2/3 h-2/3 rounded-2xl border-2 opacity-30"></div>
+                <div class="skill-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"
+                  aria-label="HTML5 and semantics proficiency: 95 percent">
+                  <span class="skill-bar__fill" style="--level: 95%"></span>
+                </div>
+              </li>
+              <li>
+                <div class="flex items-center justify-between mb-2">
+                  <span class="text-sm font-semibold">CSS3 &amp; Responsive Layout</span>
+                  <span class="text-xs text-[var(--text-secondary)]">90%</span>
+                </div>
+                <div class="skill-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"
+                  aria-label="CSS3 and responsive layout proficiency: 90 percent">
+                  <span class="skill-bar__fill" style="--level: 90%"></span>
+                </div>
+              </li>
+              <li>
+                <div class="flex items-center justify-between mb-2">
+                  <span class="text-sm font-semibold">JavaScript (ES2020+)</span>
+                  <span class="text-xs text-[var(--text-secondary)]">85%</span>
+                </div>
+                <div class="skill-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"
+                  aria-label="JavaScript proficiency: 85 percent">
+                  <span class="skill-bar__fill" style="--level: 85%"></span>
+                </div>
+              </li>
+              <li>
+                <div class="flex items-center justify-between mb-2">
+                  <span class="text-sm font-semibold">React</span>
+                  <span class="text-xs text-[var(--text-secondary)]">80%</span>
+                </div>
+                <div class="skill-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"
+                  aria-label="React proficiency: 80 percent">
+                  <span class="skill-bar__fill" style="--level: 80%"></span>
+                </div>
+              </li>
+              <li>
+                <div class="flex items-center justify-between mb-2">
+                  <span class="text-sm font-semibold">TypeScript</span>
+                  <span class="text-xs text-[var(--text-secondary)]">75%</span>
+                </div>
+                <div class="skill-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"
+                  aria-label="TypeScript proficiency: 75 percent">
+                  <span class="skill-bar__fill" style="--level: 75%"></span>
+                </div>
+              </li>
+              <li>
+                <div class="flex items-center justify-between mb-2">
+                  <span class="text-sm font-semibold">Tailwind CSS</span>
+                  <span class="text-xs text-[var(--text-secondary)]">85%</span>
+                </div>
+                <div class="skill-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"
+                  aria-label="Tailwind CSS proficiency: 85 percent">
+                  <span class="skill-bar__fill" style="--level: 85%"></span>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <!-- Backend & Data -->
+          <div class="reveal reveal-delay-1 card p-7">
+            <h3 class="flex items-center gap-2 text-lg font-bold mb-6">
+              <span class="w-2.5 h-2.5 rounded-full" style="background: var(--gradient-end);"
+                aria-hidden="true"></span>
+              Backend &amp; Data
+            </h3>
+            <ul class="space-y-5 list-none p-0 m-0">
+              <li>
+                <div class="flex items-center justify-between mb-2">
+                  <span class="text-sm font-semibold">Node.js</span>
+                  <span class="text-xs text-[var(--text-secondary)]">80%</span>
+                </div>
+                <div class="skill-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"
+                  aria-label="Node.js proficiency: 80 percent">
+                  <span class="skill-bar__fill" style="--level: 80%"></span>
+                </div>
+              </li>
+              <li>
+                <div class="flex items-center justify-between mb-2">
+                  <span class="text-sm font-semibold">Express</span>
+                  <span class="text-xs text-[var(--text-secondary)]">78%</span>
+                </div>
+                <div class="skill-bar" role="progressbar" aria-valuenow="78" aria-valuemin="0" aria-valuemax="100"
+                  aria-label="Express proficiency: 78 percent">
+                  <span class="skill-bar__fill" style="--level: 78%"></span>
+                </div>
+              </li>
+              <li>
+                <div class="flex items-center justify-between mb-2">
+                  <span class="text-sm font-semibold">REST API Design</span>
+                  <span class="text-xs text-[var(--text-secondary)]">82%</span>
+                </div>
+                <div class="skill-bar" role="progressbar" aria-valuenow="82" aria-valuemin="0" aria-valuemax="100"
+                  aria-label="REST API design proficiency: 82 percent">
+                  <span class="skill-bar__fill" style="--level: 82%"></span>
+                </div>
+              </li>
+              <li>
+                <div class="flex items-center justify-between mb-2">
+                  <span class="text-sm font-semibold">Next.js</span>
+                  <span class="text-xs text-[var(--text-secondary)]">75%</span>
+                </div>
+                <div class="skill-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"
+                  aria-label="Next.js proficiency: 75 percent">
+                  <span class="skill-bar__fill" style="--level: 75%"></span>
+                </div>
+              </li>
+              <li>
+                <div class="flex items-center justify-between mb-2">
+                  <span class="text-sm font-semibold">PostgreSQL</span>
+                  <span class="text-xs text-[var(--text-secondary)]">75%</span>
+                </div>
+                <div class="skill-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"
+                  aria-label="PostgreSQL proficiency: 75 percent">
+                  <span class="skill-bar__fill" style="--level: 75%"></span>
+                </div>
+              </li>
+              <li>
+                <div class="flex items-center justify-between mb-2">
+                  <span class="text-sm font-semibold">MongoDB</span>
+                  <span class="text-xs text-[var(--text-secondary)]">72%</span>
+                </div>
+                <div class="skill-bar" role="progressbar" aria-valuenow="72" aria-valuemin="0" aria-valuemax="100"
+                  aria-label="MongoDB proficiency: 72 percent">
+                  <span class="skill-bar__fill" style="--level: 72%"></span>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <!-- Tooling & Design -->
+          <div class="reveal reveal-delay-2 card p-7">
+            <h3 class="flex items-center gap-2 text-lg font-bold mb-6">
+              <span class="w-2.5 h-2.5 rounded-full" style="background: var(--accent);" aria-hidden="true"></span>
+              Tooling &amp; Design
+            </h3>
+            <ul class="space-y-5 list-none p-0 m-0">
+              <li>
+                <div class="flex items-center justify-between mb-2">
+                  <span class="text-sm font-semibold">Git &amp; GitHub</span>
+                  <span class="text-xs text-[var(--text-secondary)]">85%</span>
+                </div>
+                <div class="skill-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"
+                  aria-label="Git and GitHub proficiency: 85 percent">
+                  <span class="skill-bar__fill" style="--level: 85%"></span>
+                </div>
+              </li>
+              <li>
+                <div class="flex items-center justify-between mb-2">
+                  <span class="text-sm font-semibold">Responsive Design</span>
+                  <span class="text-xs text-[var(--text-secondary)]">90%</span>
+                </div>
+                <div class="skill-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"
+                  aria-label="Responsive design proficiency: 90 percent">
+                  <span class="skill-bar__fill" style="--level: 90%"></span>
+                </div>
+              </li>
+              <li>
+                <div class="flex items-center justify-between mb-2">
+                  <span class="text-sm font-semibold">Docker</span>
+                  <span class="text-xs text-[var(--text-secondary)]">70%</span>
+                </div>
+                <div class="skill-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"
+                  aria-label="Docker proficiency: 70 percent">
+                  <span class="skill-bar__fill" style="--level: 70%"></span>
+                </div>
+              </li>
+              <li>
+                <div class="flex items-center justify-between mb-2">
+                  <span class="text-sm font-semibold">Figma</span>
+                  <span class="text-xs text-[var(--text-secondary)]">70%</span>
+                </div>
+                <div class="skill-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"
+                  aria-label="Figma proficiency: 70 percent">
+                  <span class="skill-bar__fill" style="--level: 70%"></span>
+                </div>
+              </li>
+              <li>
+                <div class="flex items-center justify-between mb-2">
+                  <span class="text-sm font-semibold">Bootstrap</span>
+                  <span class="text-xs text-[var(--text-secondary)]">70%</span>
+                </div>
+                <div class="skill-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"
+                  aria-label="Bootstrap proficiency: 70 percent">
+                  <span class="skill-bar__fill" style="--level: 70%"></span>
+                </div>
+              </li>
+              <li>
+                <div class="flex items-center justify-between mb-2">
+                  <span class="text-sm font-semibold">Data Analysis</span>
+                  <span class="text-xs text-[var(--text-secondary)]">75%</span>
+                </div>
+                <div class="skill-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"
+                  aria-label="Data analysis proficiency: 75 percent">
+                  <span class="skill-bar__fill" style="--level: 75%"></span>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ===== Experience =====
+         =====================================================================
+         EDIT REQUIRED: your CV PDF stores text with subset-embedded fonts and
+         no ToUnicode map, so it could not be read programmatically. The roles,
+         dates and bullets below are a structured TEMPLATE built from evidence
+         in your repo (project set, client testimonials, Hanoi location).
+         Replace every entry with your real employment history before launch.
+         ===================================================================== -->
+    <section id="experience" class="section-padding" aria-labelledby="experience-heading">
+      <div class="container-custom">
+        <h2 id="experience-heading" class="reveal text-4xl sm:text-5xl font-extrabold mb-4 text-center">
+          Work <span class="gradient-text">experience</span>
+        </h2>
+        <p class="reveal reveal-delay-1 text-center text-[var(--text-secondary)] max-w-2xl mx-auto mb-16">
+          Where I've been building, and what came out of it.
+        </p>
+
+        <div class="max-w-3xl mx-auto">
+          <ol class="timeline list-none p-0 m-0">
+
+            <li class="reveal timeline__item">
+              <span class="timeline__dot" aria-hidden="true"></span>
+              <div class="card card-hover p-6">
+                <p class="text-xs font-semibold uppercase tracking-wider mb-2" style="color: var(--accent);">
+                  <time datetime="2023">2023</time> — Present
+                </p>
+                <h3 class="text-xl font-bold mb-1">Full Stack Software Engineer</h3>
+                <p class="text-sm text-[var(--text-secondary)] mb-4">
+                  Freelance &amp; Contract · Hanoi, Vietnam (Remote)
+                </p>
+                <ul class="space-y-2 text-sm text-[var(--text-secondary)] list-disc pl-5">
+                  <li>Design and ship end-to-end web applications for SMB clients — from marketing sites
+                    to e-commerce storefronts and internal dashboards.</li>
+                  <li>Build responsive, accessible front ends with React, Next.js and Tailwind CSS,
+                    backed by Node.js/Express REST APIs.</li>
+                  <li>Own the full delivery lifecycle: requirements, architecture, build, deployment
+                    and post-launch support.</li>
+                  <li>Improved Core Web Vitals on client properties by optimising images, deferring
+                    non-critical scripts and reducing bundle size.</li>
+                </ul>
+              </div>
+            </li>
+
+            <li class="reveal reveal-delay-1 timeline__item">
+              <span class="timeline__dot" aria-hidden="true"></span>
+              <div class="card card-hover p-6">
+                <p class="text-xs font-semibold uppercase tracking-wider mb-2" style="color: var(--accent);">
+                  <time datetime="2022">2022</time> — <time datetime="2023">2023</time>
+                </p>
+                <h3 class="text-xl font-bold mb-1">Front-End Web Developer</h3>
+                <p class="text-sm text-[var(--text-secondary)] mb-4">
+                  Contract · Vietnam
+                </p>
+                <ul class="space-y-2 text-sm text-[var(--text-secondary)] list-disc pl-5">
+                  <li>Delivered responsive interfaces for survey, restaurant, travel and retail clients
+                    using semantic HTML, modern CSS and JavaScript.</li>
+                  <li>Translated Figma designs into pixel-accurate, cross-browser layouts that held up
+                    from 320px to desktop.</li>
+                  <li>Collaborated directly with founders and project managers to turn loose business
+                    requirements into scoped, phased build plans.</li>
+                </ul>
+              </div>
+            </li>
+
+            <li class="reveal reveal-delay-2 timeline__item">
+              <span class="timeline__dot" aria-hidden="true"></span>
+              <div class="card card-hover p-6">
+                <p class="text-xs font-semibold uppercase tracking-wider mb-2" style="color: var(--accent);">
+                  Earlier
+                </p>
+                <h3 class="text-xl font-bold mb-1">Education &amp; Foundations</h3>
+                <p class="text-sm text-[var(--text-secondary)] mb-4">
+                  Mathematics, Data Analysis &amp; Self-Directed Engineering Study
+                </p>
+                <ul class="space-y-2 text-sm text-[var(--text-secondary)] list-disc pl-5">
+                  <li>Built a strong mathematical and analytical foundation that now underpins data
+                    modelling and algorithmic work.</li>
+                  <li>Continuous study across the JavaScript ecosystem, databases, containerisation
+                    and cloud deployment.</li>
+                </ul>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </section>
+    <!-- ===== Projects =====
+         EDIT: only three stock-style screenshots exist in /public/img/projects,
+         so they are reused below. Replace each `src` with a real screenshot of
+         the corresponding live site for maximum credibility. -->
+    <section id="projects" class="section-padding" style="background: var(--bg-secondary);"
+      aria-labelledby="projects-heading">
+      <div class="container-custom">
+        <h2 id="projects-heading" class="reveal text-4xl sm:text-5xl font-extrabold mb-4 text-center">
+          Recent <span class="gradient-text">projects</span>
+        </h2>
+        <p class="reveal reveal-delay-1 text-center text-[var(--text-secondary)] max-w-2xl mx-auto mb-16">
+          Selected client and personal builds — each one live and clickable.
+        </p>
+
+        <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto">
+
+          <!-- 1. Land Survey -->
+          <article class="reveal card card-hover overflow-hidden flex flex-col">
+            <div class="project-media">
+              <img src="/img/projects/respweb.jpg" width="1200" height="800"
+                alt="Responsive land survey web application interface" loading="lazy" decoding="async" />
+            </div>
+            <div class="p-6 flex flex-col flex-1">
+              <h3 class="text-lg font-bold mb-2">Land Survey Platform</h3>
+              <p class="text-sm text-[var(--text-secondary)] mb-4 flex-1">
+                Responsive surveying business site with service breakdowns and enquiry capture,
+                built component-first in React.
+              </p>
+              <ul class="flex flex-wrap gap-2 list-none p-0 m-0 mb-5" aria-label="Technologies used">
+                <li class="tag">React</li>
+                <li class="tag">Bootstrap</li>
+                <li class="tag">JavaScript</li>
+              </ul>
+              <div class="flex items-center gap-3 mt-auto">
+                <a href="https://okorochimezie-surveyor.netlify.app/" target="_blank" rel="noopener noreferrer"
+                  class="gradient-btn gradient-btn--sm">Live Demo</a>
+                <a href="https://github.com/mezieb" target="_blank" rel="noopener noreferrer"
+                  class="text-sm font-semibold text-[var(--text-secondary)] hover:text-[var(--accent)] transition-colors">
+                  Source<span class="sr-only"> for Land Survey Platform</span>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- 2. Restaurant -->
+          <article class="reveal reveal-delay-1 card card-hover overflow-hidden flex flex-col">
+            <div class="project-media">
+              <img src="/img/projects/coding.jpg" width="1200" height="799"
+                alt="Restaurant website with menu and reservation sections" loading="lazy" decoding="async" />
+            </div>
+            <div class="p-6 flex flex-col flex-1">
+              <h3 class="text-lg font-bold mb-2">Restaurant Website</h3>
+              <p class="text-sm text-[var(--text-secondary)] mb-4 flex-1">
+                Menu-led marketing site for a hospitality client, focused on fast load times and
+                mobile-first ordering journeys.
+              </p>
+              <ul class="flex flex-wrap gap-2 list-none p-0 m-0 mb-5" aria-label="Technologies used">
+                <li class="tag">HTML5</li>
+                <li class="tag">CSS3</li>
+                <li class="tag">JavaScript</li>
+              </ul>
+              <div class="flex items-center gap-3 mt-auto">
+                <a href="https://okorochimezie-restaurant.netlify.app/" target="_blank" rel="noopener noreferrer"
+                  class="gradient-btn gradient-btn--sm">Live Demo</a>
+                <a href="https://github.com/mezieb" target="_blank" rel="noopener noreferrer"
+                  class="text-sm font-semibold text-[var(--text-secondary)] hover:text-[var(--accent)] transition-colors">
+                  Source<span class="sr-only"> for Restaurant Website</span>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- 3. Travel -->
+          <article class="reveal reveal-delay-2 card card-hover overflow-hidden flex flex-col">
+            <div class="project-media">
+              <img src="/img/projects/plan.jpg" width="1200" height="1800"
+                alt="Travel booking website showcasing destinations" loading="lazy" decoding="async" />
+            </div>
+            <div class="p-6 flex flex-col flex-1">
+              <h3 class="text-lg font-bold mb-2">Travel Booking Site</h3>
+              <p class="text-sm text-[var(--text-secondary)] mb-4 flex-1">
+                Destination showcase and booking funnel with rich imagery, interactive galleries and
+                a fully responsive layout.
+              </p>
+              <ul class="flex flex-wrap gap-2 list-none p-0 m-0 mb-5" aria-label="Technologies used">
+                <li class="tag">HTML5</li>
+                <li class="tag">CSS3</li>
+                <li class="tag">JavaScript</li>
+              </ul>
+              <div class="flex items-center gap-3 mt-auto">
+                <a href="https://okorochimezietravel.netlify.app/" target="_blank" rel="noopener noreferrer"
+                  class="gradient-btn gradient-btn--sm">Live Demo</a>
+                <a href="https://github.com/mezieb" target="_blank" rel="noopener noreferrer"
+                  class="text-sm font-semibold text-[var(--text-secondary)] hover:text-[var(--accent)] transition-colors">
+                  Source<span class="sr-only"> for Travel Booking Site</span>
+                </a>
+              </div>
+            </div>
+          </article>
+          <!-- 4. E-commerce -->
+          <article class="reveal card card-hover overflow-hidden flex flex-col">
+            <div class="project-media">
+              <img src="/img/projects/coding.jpg" width="1200" height="799"
+                alt="E-commerce storefront with product grid and cart" loading="lazy" decoding="async" />
+            </div>
+            <div class="p-6 flex flex-col flex-1">
+              <h3 class="text-lg font-bold mb-2">E-commerce Storefront</h3>
+              <p class="text-sm text-[var(--text-secondary)] mb-4 flex-1">
+                Product catalogue, cart state and checkout flow for a retail client — structured for
+                easy extension into a payments-integrated platform.
+              </p>
+              <ul class="flex flex-wrap gap-2 list-none p-0 m-0 mb-5" aria-label="Technologies used">
+                <li class="tag">JavaScript</li>
+                <li class="tag">CSS3</li>
+                <li class="tag">REST</li>
+              </ul>
+              <div class="flex items-center gap-3 mt-auto">
+                <a href="https://okorochimezie-e-commerce.netlify.app/" target="_blank" rel="noopener noreferrer"
+                  class="gradient-btn gradient-btn--sm">Live Demo</a>
+                <a href="https://github.com/mezieb" target="_blank" rel="noopener noreferrer"
+                  class="text-sm font-semibold text-[var(--text-secondary)] hover:text-[var(--accent)] transition-colors">
+                  Source<span class="sr-only"> for E-commerce Storefront</span>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- 5. Products Page -->
+          <article class="reveal reveal-delay-1 card card-hover overflow-hidden flex flex-col">
+            <div class="project-media">
+              <img src="/img/projects/respweb.jpg" width="1200" height="800"
+                alt="Product listing page with filtering and responsive grid" loading="lazy" decoding="async" />
+            </div>
+            <div class="p-6 flex flex-col flex-1">
+              <h3 class="text-lg font-bold mb-2">Product Catalogue Page</h3>
+              <p class="text-sm text-[var(--text-secondary)] mb-4 flex-1">
+                Filterable product listing with React state management and a responsive grid that
+                reflows cleanly across breakpoints.
+              </p>
+              <ul class="flex flex-wrap gap-2 list-none p-0 m-0 mb-5" aria-label="Technologies used">
+                <li class="tag">React</li>
+                <li class="tag">Bootstrap</li>
+                <li class="tag">JavaScript</li>
+              </ul>
+              <div class="flex items-center gap-3 mt-auto">
+                <a href="https://okorochimezie-product-page.netlify.app/" target="_blank" rel="noopener noreferrer"
+                  class="gradient-btn gradient-btn--sm">Live Demo</a>
+                <a href="https://github.com/mezieb" target="_blank" rel="noopener noreferrer"
+                  class="text-sm font-semibold text-[var(--text-secondary)] hover:text-[var(--accent)] transition-colors">
+                  Source<span class="sr-only"> for Product Catalogue Page</span>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- 6. This portfolio -->
+          <article class="reveal reveal-delay-2 card card-hover overflow-hidden flex flex-col">
+            <div class="project-media">
+              <img src="/img/projects/plan.jpg" width="1200" height="1800"
+                alt="This portfolio website built with Vite, TypeScript and Tailwind CSS" loading="lazy"
+                decoding="async" />
+            </div>
+            <div class="p-6 flex flex-col flex-1">
+              <h3 class="text-lg font-bold mb-2">Portfolio &amp; Brand Site</h3>
+              <p class="text-sm text-[var(--text-secondary)] mb-4 flex-1">
+                The site you're reading: a static, dark-first single-page build with a full design-token
+                system, class-based theming and a 95+ Lighthouse target.
+              </p>
+              <ul class="flex flex-wrap gap-2 list-none p-0 m-0 mb-5" aria-label="Technologies used">
+                <li class="tag tag-accent">Vite</li>
+                <li class="tag tag-accent">TypeScript</li>
+                <li class="tag tag-accent">Tailwind v4</li>
+              </ul>
+              <div class="flex items-center gap-3 mt-auto">
+                <a href="https://github.com/mezieb/portfolio1" target="_blank" rel="noopener noreferrer"
+                  class="gradient-btn gradient-btn--sm">Source Code</a>
+                <a href="#hero"
+                  class="text-sm font-semibold text-[var(--text-secondary)] hover:text-[var(--accent)] transition-colors">
+                  Back to top<span class="sr-only"> of this portfolio</span>
+                </a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+    <!-- ===== Testimonials ===== -->
+    <section id="testimonials" class="section-padding" aria-labelledby="testimonials-heading">
+      <div class="container-custom">
+        <h2 id="testimonials-heading" class="reveal text-4xl sm:text-5xl font-extrabold mb-4 text-center">
+          Client <span class="gradient-text">testimonials</span>
+        </h2>
+        <p class="reveal reveal-delay-1 text-center text-[var(--text-secondary)] max-w-2xl mx-auto mb-16">
+          In the words of the people I've built for.
+        </p>
+
+        <div class="grid gap-6 md:grid-cols-3 max-w-6xl mx-auto">
+
+          <figure class="reveal card card-hover p-7 m-0 flex flex-col">
+            <svg class="w-8 h-8 mb-4 opacity-40" style="color: var(--accent);" viewBox="0 0 24 24" fill="currentColor"
+              aria-hidden="true" focusable="false">
+              <path d="M9.5 6C6.5 7.5 5 10 5 13v5h6v-6H8c0-2 .8-3.5 2.5-4.5L9.5 6zm9 0C15.5 7.5 14 10 14 13v5h6v-6h-3c0-2 .8-3.5 2.5-4.5L18.5 6z" />
+            </svg>
+            <blockquote class="m-0 flex-1">
+              <p class="text-sm leading-relaxed text-[var(--text-secondary)]">
+                I'm a start-up — thanks to Okoro for helping me set up my business website.
+              </p>
+            </blockquote>
+            <figcaption class="flex items-center gap-3 mt-6 pt-5"
+              style="border-top: 1px solid var(--border-color);">
+              <img src="/img/testimonials/mayflor.jpg" width="320" height="320" alt="Portrait of Mayflor"
+                class="w-12 h-12 rounded-full object-cover" loading="lazy" decoding="async" />
+              <div>
+                <p class="text-sm font-bold m-0">Mayflor</p>
+                <cite class="text-xs text-[var(--text-secondary)] not-italic">CEO, Dreamy Nails</cite>
+              </div>
+            </figcaption>
+          </figure>
+
+          <figure class="reveal reveal-delay-1 card card-hover p-7 m-0 flex flex-col">
+            <svg class="w-8 h-8 mb-4 opacity-40" style="color: var(--accent);" viewBox="0 0 24 24" fill="currentColor"
+              aria-hidden="true" focusable="false">
+              <path d="M9.5 6C6.5 7.5 5 10 5 13v5h6v-6H8c0-2 .8-3.5 2.5-4.5L9.5 6zm9 0C15.5 7.5 14 10 14 13v5h6v-6h-3c0-2 .8-3.5 2.5-4.5L18.5 6z" />
+            </svg>
+            <blockquote class="m-0 flex-1">
+              <p class="text-sm leading-relaxed text-[var(--text-secondary)]">
+                I have worked with Okoro — he is focused, detailed and committed to finding the best
+                solutions to challenges.
+              </p>
+            </blockquote>
+            <figcaption class="flex items-center gap-3 mt-6 pt-5"
+              style="border-top: 1px solid var(--border-color);">
+              <img src="/img/testimonials/dr-emma.jpg" width="320" height="320" alt="Portrait of Dr Emma"
+                class="w-12 h-12 rounded-full object-cover" loading="lazy" decoding="async" />
+              <div>
+                <p class="text-sm font-bold m-0">Dr Emma, PhD</p>
+                <cite class="text-xs text-[var(--text-secondary)] not-italic">Project Manager</cite>
+              </div>
+            </figcaption>
+          </figure>
+
+          <figure class="reveal reveal-delay-2 card card-hover p-7 m-0 flex flex-col">
+            <svg class="w-8 h-8 mb-4 opacity-40" style="color: var(--accent);" viewBox="0 0 24 24" fill="currentColor"
+              aria-hidden="true" focusable="false">
+              <path d="M9.5 6C6.5 7.5 5 10 5 13v5h6v-6H8c0-2 .8-3.5 2.5-4.5L9.5 6zm9 0C15.5 7.5 14 10 14 13v5h6v-6h-3c0-2 .8-3.5 2.5-4.5L18.5 6z" />
+            </svg>
+            <blockquote class="m-0 flex-1">
+              <p class="text-sm leading-relaxed text-[var(--text-secondary)]">
+                I have worked with Okoro for a long time and we have maintained a good working
+                relationship and partnership to date.
+              </p>
+            </blockquote>
+            <figcaption class="flex items-center gap-3 mt-6 pt-5"
+              style="border-top: 1px solid var(--border-color);">
+              <img src="/img/testimonials/dao-ha.jpg" width="320" height="320" alt="Portrait of Dao Ha"
+                class="w-12 h-12 rounded-full object-cover" loading="lazy" decoding="async" />
+              <div>
+                <p class="text-sm font-bold m-0">Dao Ha</p>
+                <cite class="text-xs text-[var(--text-secondary)] not-italic">CEO, Spago Vietnam</cite>
+              </div>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+    <!-- ===== Contact ===== -->
+    <section id="contact" class="section-padding" style="background: var(--bg-secondary);"
+      aria-labelledby="contact-heading">
+      <div class="container-custom">
+        <h2 id="contact-heading" class="reveal text-4xl sm:text-5xl font-extrabold mb-4 text-center">
+          Get in <span class="gradient-text">touch</span>
+        </h2>
+        <p class="reveal reveal-delay-1 text-center text-[var(--text-secondary)] max-w-2xl mx-auto mb-16">
+          Have a project in mind? Let's talk about what you need and how to build it.
+        </p>
+
+        <div class="grid gap-8 lg:grid-cols-2 max-w-6xl mx-auto items-start">
+
+          <!-- Direct contact details -->
+          <div class="reveal space-y-4">
+            <div class="card p-6 flex items-start gap-4">
+              <span class="icon-btn shrink-0" aria-hidden="true">
+                <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round" focusable="false">
+                  <path
+                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z" />
+                </svg>
+              </span>
+              <div>
+                <h3 class="text-base font-bold mb-1">Call</h3>
+                <p class="text-sm text-[var(--text-secondary)] m-0">
+                  <a class="hover:text-[var(--accent)] transition-colors" href="tel:+841252181203">+84 125 218 1203</a>
+                  <br />
+                  <a class="hover:text-[var(--accent)] transition-colors" href="tel:+84394755263">+84 394 755 263</a>
+                </p>
               </div>
             </div>
 
-            <!-- Bio Side -->
-            <div class="reveal reveal-delay-2 flex-1 max-w-xl">
-              <p class="text-lg leading-relaxed mb-6 text-[var(--text-primary)]">
-                I'm <strong>Okoro Chimezie Bright</strong>, a professional 
-                <span class="gradient-text font-semibold">Software Engineer</span> based in Vietnam. With deep passion for mathematics, data analysis, and full-stack web development,
-                I specialize in building scalable applications that solve real-world problems.
+            <div class="card p-6 flex items-start gap-4">
+              <span class="icon-btn shrink-0" aria-hidden="true">
+                <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round" focusable="false">
+                  <rect x="2" y="4" width="20" height="16" rx="2" />
+                  <path d="m22 7-10 6L2 7" />
+                </svg>
+              </span>
+              <div>
+                <h3 class="text-base font-bold mb-1">Email</h3>
+                <p class="text-sm text-[var(--text-secondary)] m-0">
+                  <a class="hover:text-[var(--accent)] transition-colors break-all"
+                    href="mailto:okorobright13@gmail.com">okorobright13@gmail.com</a>
+                </p>
+              </div>
+            </div>
+
+            <div class="card p-6 flex items-start gap-4">
+              <span class="icon-btn shrink-0" aria-hidden="true">
+                <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round" focusable="false">
+                  <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z" />
+                  <circle cx="12" cy="10" r="3" />
+                </svg>
+              </span>
+              <div>
+                <h3 class="text-base font-bold mb-1">Location</h3>
+                <p class="text-sm text-[var(--text-secondary)] m-0">
+                  <a class="hover:text-[var(--accent)] transition-colors" target="_blank" rel="noopener noreferrer"
+                    href="https://www.google.com/maps/place/Hanoi,+Vietnam">Hanoi, Vietnam</a>
+                  <span class="block text-xs mt-1">Available for remote work worldwide</span>
+                </p>
+              </div>
+            </div>
+            <!-- Social links -->
+            <div class="card p-6">
+              <h3 class="text-base font-bold mb-4">Find me online</h3>
+              <ul class="flex items-center gap-3 list-none p-0 m-0">
+                <li>
+                  <a href="https://github.com/mezieb" target="_blank" rel="noopener noreferrer" class="icon-btn"
+                    aria-label="GitHub profile (opens in a new tab)">
+                    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
+                      <path
+                        d="M12 .5A11.5 11.5 0 0 0 .5 12a11.5 11.5 0 0 0 7.86 10.92c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.53-1.34-1.29-1.7-1.29-1.7-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.2 1.77 1.2 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.7 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.8 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.12 3.05.74.81 1.18 1.84 1.18 3.1 0 4.43-2.69 5.41-5.25 5.69.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 23.5 12 11.5 11.5 0 0 0 12 .5z" />
+                    </svg>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://www.linkedin.com/in/chimezie-okoro-767581107/" target="_blank"
+                    rel="noopener noreferrer" class="icon-btn" aria-label="LinkedIn profile (opens in a new tab)">
+                    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
+                      <path
+                        d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05a3.74 3.74 0 0 1 3.37-1.85c3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45z" />
+                    </svg>
+                  </a>
+                </li>
+                <li>
+                  <a href="mailto:okorobright13@gmail.com" class="icon-btn" aria-label="Send an email">
+                    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                      stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+                      <rect x="2" y="4" width="20" height="16" rx="2" />
+                      <path d="m22 7-10 6L2 7" />
+                    </svg>
+                  </a>
+                </li>
+              </ul>
+              <p class="text-xs text-[var(--text-secondary)] mt-4 mb-0">
+                Typical response time: within 24 hours.
+              </p>
+            </div>
+          </div>
+          <!-- Message form (Netlify Forms; degrades to a native POST without JS) -->
+          <div class="reveal reveal-delay-1 card p-7">
+            <h3 class="text-lg font-bold mb-6">Send a message</h3>
+
+            <form id="contact-form" name="contact" method="POST" action="/#contact" data-netlify="true"
+              netlify-honeypot="bot-field">
+              <input type="hidden" name="form-name" value="contact" />
+              <p class="hidden" aria-hidden="true">
+                <label>Don't fill this out: <input name="bot-field" tabindex="-1" autocomplete="off" /></label>
               </p>
 
-              <p class="text-base leading-relaxed mb-8 text-[var(--text-secondary)]">
-                My approach combines clean architecture with pixel-perfect design. I've spent years building solutions
-                for businesses — from landing pages to full e-commerce platforms and SaaS dashboards.
-              </p>
-
-              <!-- Stats Row -->
-              <div class="grid grid-cols-3 gap-4 mb-8 p-6 rounded-2xl" style="background: var(--bg-secondary); border: 1px solid var(--border-color);">
-                <div class="text-center">
-                  <span class="block text-3xl font-extrabold gradient-text" id="stat-years"></span>
-                  <span class="text-xs uppercase tracking-wider text-[var(--text-secondary)]">Years Exp.</span>
+              <div class="grid gap-4 sm:grid-cols-2 mb-4">
+                <div>
+                  <label for="cf-name" class="block text-sm font-semibold mb-2">
+                    Name <span style="color: var(--accent);" aria-hidden="true">*</span>
+                  </label>
+                  <input id="cf-name" name="name" type="text" class="field" required autocomplete="name"
+                    placeholder="Your name" />
                 </div>
-                <div class="text-center border-x-1" style="border-color: var(--border-color);">
-                  <span class="block text-3xl font-extrabold gradient-text" id="stat-projects"></span>
-  </div>
+                <div>
+                  <label for="cf-email" class="block text-sm font-semibold mb-2">
+                    Email <span style="color: var(--accent);" aria-hidden="true">*</span>
+                  </label>
+                  <input id="cf-email" name="email" type="email" class="field" required autocomplete="email"
+                    placeholder="you@company.com" />
+                </div>
+              </div>
+
+              <div class="mb-4">
+                <label for="cf-subject" class="block text-sm font-semibold mb-2">Subject</label>
+                <input id="cf-subject" name="subject" type="text" class="field" placeholder="Project enquiry" />
+              </div>
+
+              <div class="mb-5">
+                <label for="cf-message" class="block text-sm font-semibold mb-2">
+                  Message <span style="color: var(--accent);" aria-hidden="true">*</span>
+                </label>
+                <textarea id="cf-message" name="message" rows="5" class="field resize-y" required
+                  placeholder="Tell me about your project, timeline and budget..."></textarea>
+              </div>
+
+              <div class="flex flex-wrap items-center gap-4">
+                <button type="submit" class="gradient-btn gradient-btn--sm">Send Message</button>
+                <p id="form-status" class="text-sm m-0" role="status" aria-live="polite"></p>
+              </div>
+
+              <p class="text-xs text-[var(--text-secondary)] mt-4 mb-0">
+                Prefer email? Write directly to
+                <a href="mailto:okorobright13@gmail.com"
+                  class="hover:text-[var(--accent)] transition-colors">okorobright13@gmail.com</a>.
+              </p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <!-- ========= Footer ========= -->
+  <footer class="pt-16 pb-8" style="border-top: 1px solid var(--border-color);">
+    <div class="container-custom">
+      <div class="grid gap-10 md:grid-cols-3 mb-12">
+
+        <!-- Brand -->
+        <div>
+          <a href="#hero" class="inline-flex items-center gap-1 text-2xl font-extrabold gradient-text mb-3"
+            aria-label="Chimezie Bright — back to top">
+            <span class="font-mono">&lt;</span>CB<span class="font-mono">/&gt;</span>
+          </a>
+          <p class="text-sm text-[var(--text-secondary)] leading-relaxed max-w-xs m-0">
+            Full Stack Software Engineer building modern, scalable web applications
+            from Hanoi, Vietnam — available for remote work worldwide.
+          </p>
+        </div>
+
+        <!-- Quick nav -->
+        <nav aria-label="Footer">
+          <h2 class="text-sm font-bold uppercase tracking-wider mb-4">Navigate</h2>
+          <ul class="grid grid-cols-2 gap-2 list-none p-0 m-0">
+            <li><a href="#about" class="text-sm text-[var(--text-secondary)] hover:text-[var(--accent)] transition-colors">About</a></li>
+            <li><a href="#skills" class="text-sm text-[var(--text-secondary)] hover:text-[var(--accent)] transition-colors">Skills</a></li>
+            <li><a href="#experience" class="text-sm text-[var(--text-secondary)] hover:text-[var(--accent)] transition-colors">Experience</a></li>
+            <li><a href="#projects" class="text-sm text-[var(--text-secondary)] hover:text-[var(--accent)] transition-colors">Projects</a></li>
+            <li><a href="#testimonials" class="text-sm text-[var(--text-secondary)] hover:text-[var(--accent)] transition-colors">Testimonials</a></li>
+            <li><a href="#contact" class="text-sm text-[var(--text-secondary)] hover:text-[var(--accent)] transition-colors">Contact</a></li>
+          </ul>
+        </nav>
+
+        <!-- Contact / social -->
+        <div>
+          <h2 class="text-sm font-bold uppercase tracking-wider mb-4">Connect</h2>
+          <ul class="space-y-2 list-none p-0 m-0">
+            <li>
+              <a href="mailto:okorobright13@gmail.com"
+                class="text-sm text-[var(--text-secondary)] hover:text-[var(--accent)] transition-colors break-all">
+                okorobright13@gmail.com
+              </a>
+            </li>
+            <li>
+              <a href="tel:+841252181203"
+                class="text-sm text-[var(--text-secondary)] hover:text-[var(--accent)] transition-colors">
+                +84 125 218 1203
+              </a>
+            </li>
+            <li>
+              <a href="https://github.com/mezieb" target="_blank" rel="noopener noreferrer"
+                class="text-sm text-[var(--text-secondary)] hover:text-[var(--accent)] transition-colors">
+                github.com/mezieb
+              </a>
+            </li>
+            <li>
+              <a href="https://www.linkedin.com/in/chimezie-okoro-767581107/" target="_blank" rel="noopener noreferrer"
+                class="text-sm text-[var(--text-secondary)] hover:text-[var(--accent)] transition-colors">
+                LinkedIn
+              </a>
+            </li>
+            <li>
+              <a href="/resume/Okoro_Chimezie_Bright_Software_Engineer_CV.pdf" target="_blank" rel="noopener noreferrer"
+                class="text-sm text-[var(--text-secondary)] hover:text-[var(--accent)] transition-colors">
+                Download CV (PDF)
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-[var(--text-secondary)]"
+        style="border-top: 1px solid var(--border-color);">
+        <p class="m-0">
+          &copy; <span id="year">2026</span> Okoro Chimezie Bright. All rights reserved.
+        </p>
+        <p class="m-0">
+          Built with Vite, TypeScript &amp; Tailwind CSS v4.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to top -->
+  <button id="back-to-top" type="button" class="icon-btn" aria-label="Back to top">
+    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+      stroke-linejoin="round" aria-hidden="true" focusable="false">
+      <path d="m18 15-6-6-6 6" />
+    </svg>
+  </button>
 
 </body>
+
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

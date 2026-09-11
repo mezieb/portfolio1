@@ -1,0 +1,11 @@
+# https://webecomtech.com/robots.txt
+User-agent: *
+Allow: /
+Disallow: /resume/
+
+# Block aggressive AI scrapers that ignore crawl budget.
+User-agent: GPTBot
+Disallow: /
+
+Sitemap: https://webecomtech.com/sitemap.xml
+Host: https://webecomtech.com

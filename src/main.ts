@@ -1,5 +1,4 @@
-import './index.css'
-import './app'
+import './index.css';
+import { boot } from './app';
 
-// Entry point — imports CSS + runtime logic
-console.log('🚀 Chimezie Bright Portfolio loaded')
+boot();

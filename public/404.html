@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Page not found — Chimezie Bright</title>
+  <meta name="description" content="The page you were looking for does not exist. Return to Chimezie Bright's portfolio." />
+  <meta name="robots" content="noindex, follow" />
+  <link rel="canonical" href="https://webecomtech.com/" />
+  <link rel="icon" type="image/svg+xml" href="/img/logos/logo.svg" />
+
+  <!-- Fully self-contained: inline styles so this page renders even if the
+       hashed build assets are unavailable. -->
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #09090b;
+      --card: #1c1c21;
+      --text: #f4f4f5;
+      --muted: #a1a1aa;
+      --accent: #22d3ee;
+      --border: #27272a;
+      --start: #06b6d4;
+      --end: #8b5cf6;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+      line-height: 1.6;
+      text-align: center;
+    }
+
+    main { max-width: 34rem; width: 100%; }
+
+    .code {
+      margin: 0;
+      font-size: clamp(5rem, 22vw, 9rem);
+      font-weight: 800;
+      line-height: 1;
+      letter-spacing: -0.04em;
+      background: linear-gradient(135deg, var(--start), var(--end));
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    h1 { margin: 0.75rem 0 0.5rem; font-size: 1.5rem; font-weight: 700; }
+
+    p { margin: 0 0 2rem; color: var(--muted); font-size: 0.9375rem; }
+
+    a.home {
+      display: inline-block;
+      padding: 0.875rem 2rem;
+      border-radius: 9999px;
+      font-weight: 600;
+      text-decoration: none;
+      color: #fff;
+      background: linear-gradient(135deg, var(--start), var(--end));
+      box-shadow: 0 4px 20px rgba(6, 182, 212, 0.3);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    a.home:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(6, 182, 212, 0.45);
+    }
+
+    a.home:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+    .hint {
+      margin-top: 2rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+      font-size: 0.8125rem;
+      color: var(--muted);
+    }
+
+    .hint a { color: var(--accent); text-decoration: none; }
+    .hint a:hover { text-decoration: underline; }
+
+    @media (prefers-reduced-motion: reduce) {
+      a.home { transition: none; }
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+    <p class="code">404</p>
+    <h1>This page doesn't exist</h1>
+    <p>
+      The link may be outdated, or the page may have been moved.
+      Head back to the portfolio to see projects, skills and contact details.
+    </p>
+    <a class="home" href="/">Back to portfolio</a>
+
+    <p class="hint">
+      Looking for something specific? Try
+      <a href="/#projects">projects</a>,
+      <a href="/#skills">skills</a> or
+      <a href="/#contact">contact</a>.
+    </p>
+  </main>
+</body>
+
+</html>

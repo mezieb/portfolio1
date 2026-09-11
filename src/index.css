@@ -1,10 +1,19 @@
 @import 'tailwindcss';
 
 /* ============================================
+   DARK MODE STRATEGY
+   Tailwind v4 defaults `dark:` to the OS media query. This site toggles a
+   `.dark` class on <html>, so the variant must be re-pointed at that class
+   or every `dark:` utility in the project is silently inert.
+   ============================================ */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* ============================================
    THEME VARIABLES — Dark First Design System
    ============================================ */
 :root {
   /* === Light Mode (default) === */
+  color-scheme: light;
   --bg-primary: #ffffff;
   --bg-secondary: #f4f4f5;
   --bg-card: #fafafa;
@@ -18,15 +27,19 @@
   --border-color: #e4e4e7;
   --glass-bg: rgba(255, 255, 255, 0.7);
   --glass-border: rgba(0, 0, 0, 0.08);
+  --header-bg: rgba(255, 255, 255, 0.75);
+  --overlay-bg: rgba(255, 255, 255, 0.97);
   --shadow-card: 0 1px 3px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.06);
   --shadow-card-hover: 0 10px 40px rgba(0, 0, 0, 0.1);
 
   /* Font sizes / Spacing */
   --container-max: 1280px;
+  --header-h: 4rem;
 }
 
 .dark {
   /* === Dark Mode === */
+  color-scheme: dark;
   --bg-primary: #09090b;
   --bg-secondary: #18181b;
   --bg-card: #1c1c21;
@@ -40,15 +53,22 @@
   --border-color: #27272a;
   --glass-bg: rgba(9, 9, 11, 0.7);
   --glass-border: rgba(255, 255, 255, 0.06);
+  --header-bg: rgba(9, 9, 11, 0.72);
+  --overlay-bg: rgba(9, 9, 11, 0.97);
   --shadow-card: 0 1px 3px rgba(0, 0, 0, 0.3), 0 1px 2px rgba(0, 0, 0, 0.2);
   --shadow-card-hover: 0 10px 40px rgba(0, 0, 0, 0.4);
 }
 
+
 /* === Global Reset === */
 html {
   scroll-behavior: smooth;
+  /* Offsets in-page anchor jumps so section headings are not hidden
+     underneath the fixed 4rem header. */
+  scroll-padding-top: calc(var(--header-h) + 1rem);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
@@ -57,7 +77,58 @@ body {
   color: var(--text-primary);
   transition: background-color 0.3s ease, color 0.3s ease;
   line-height: 1.6;
+  overflow-x: hidden;
 }
+
+h1, h2, h3, h4 {
+  font-family: 'Plus Jakarta Sans', 'Inter', system-ui, sans-serif;
+  line-height: 1.15;
+  text-wrap: balance;
+}
+
+/* Lock scrolling while the mobile nav overlay is open. */
+body.nav-open {
+  overflow: hidden;
+}
+
+/* === Accessibility === */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.skip-link {
+  position: absolute;
+  top: 0.5rem;
+  left: 0.5rem;
+  z-index: 100;
+  padding: 0.75rem 1.25rem;
+  border-radius: 0.5rem;
+  background: var(--accent);
+  color: #fff;
+  font-weight: 600;
+  transform: translateY(-200%);
+  transition: transform 0.2s ease;
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
+/* Visible, theme-aware keyboard focus for every interactive element. */
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
 
 /* === Utilities === */
 @utility container-custom {
@@ -114,14 +185,42 @@ body {
   box-shadow: none;
 }
 
+.gradient-btn--sm {
+  padding: 0.5rem 1.25rem;
+  font-size: 0.875rem;
+}
+
+/* === Theme icon swap (pure CSS — no JS textContent juggling) ===
+   Light mode shows the moon ("click for dark"); dark mode shows the sun. */
+.theme-icon {
+  width: 1.125rem;
+  height: 1.125rem;
+}
+
+.theme-icon--sun {
+  display: none;
+}
+
+.dark .theme-icon--sun {
+  display: block;
+}
+
+.dark .theme-icon--moon {
+  display: none;
+}
+
 /* === Scroll Reveal Animation Classes === */
-.reveal {
+/* The hidden state is scoped under `.js` (added to <html> by the inline head
+   script). Without JS — or for crawlers — content is always visible. This also
+   fixes the reduced-motion bug where the observer bailed out early and left
+   every `.reveal` element stuck at opacity: 0. */
+.js .reveal {
   opacity: 0;
   transform: translateY(30px);
   transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
-.reveal.visible {
+.js .reveal.visible {
   opacity: 1;
   transform: translateY(0);
 }
@@ -161,3 +260,321 @@ body {
   background: var(--accent);
   color: white;
 }
+
+/* ============================================
+   HEADER — semantic scrolled state
+   Replaces the old JS-injected `bg-opacity-60` / `dark:bg-opacity-60`,
+   which were removed in Tailwind v4 and silently did nothing.
+   ============================================ */
+#main-header {
+  background-color: transparent;
+  border-bottom: 1px solid transparent;
+  transition: background-color 0.3s ease, border-color 0.3s ease,
+    backdrop-filter 0.3s ease;
+}
+
+#main-header.header-scrolled {
+  background-color: var(--header-bg);
+  border-bottom-color: var(--border-color);
+  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(16px);
+  box-shadow: var(--shadow-card);
+}
+
+/* === Nav links + active (scrollspy) state === */
+.nav-link {
+  position: relative;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  transition: color 0.2s ease;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 100%;
+  height: 2px;
+  border-radius: 2px;
+  background: linear-gradient(90deg, var(--gradient-start), var(--gradient-end));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.25s ease;
+}
+
+.nav-link:hover,
+.nav-link:focus-visible {
+  color: var(--accent);
+}
+
+.nav-link[aria-current='true'] {
+  color: var(--accent);
+}
+
+.nav-link[aria-current='true']::after {
+  transform: scaleX(1);
+}
+
+/* === Mobile navigation overlay === */
+#mobile-nav {
+  background-color: var(--overlay-bg);
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+  transform: translateX(100%);
+  visibility: hidden;
+  transition: transform 0.3s ease, visibility 0.3s ease;
+}
+
+#mobile-nav.is-open {
+  transform: translateX(0);
+  visibility: visible;
+}
+
+/* === Icon button (theme toggle, menu, back-to-top) === */
+.icon-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 9999px;
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+  background: transparent;
+  cursor: pointer;
+  transition: border-color 0.2s ease, color 0.2s ease, background-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.icon-btn:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: var(--accent-light);
+}
+
+/* === Hamburger === */
+.hamburger-bar {
+  display: block;
+  width: 1.25rem;
+  height: 2px;
+  background-color: currentColor;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* === Surface card === */
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 1.25rem;
+  box-shadow: var(--shadow-card);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-card-hover);
+  border-color: var(--accent);
+}
+
+/* === Tech / tag pill === */
+.tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  padding: 0.375rem 0.875rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  color: var(--text-primary);
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+}
+
+.tag-accent {
+  color: var(--accent);
+  background: var(--accent-light);
+  border-color: var(--accent);
+}
+
+/* ============================================
+   SKILL BARS
+   Level is set in markup as style="--level: 95%" so the values live in the
+   HTML (SEO + no-JS safe) and JS only triggers the fill animation.
+   ============================================ */
+.skill-bar {
+  width: 100%;
+  height: 0.5rem;
+  border-radius: 9999px;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  overflow: hidden;
+}
+
+.skill-bar__fill {
+  display: block;
+  height: 100%;
+  width: var(--level, 0%);
+  border-radius: 9999px;
+  background: linear-gradient(90deg, var(--gradient-start), var(--gradient-end));
+  transform-origin: left;
+}
+
+/* Only animate when JS has opted in; otherwise the bar shows its real width. */
+.js .skill-bar__fill {
+  transform: scaleX(0);
+  transition: transform 1s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.js .skill-bar__fill.is-filled {
+  transform: scaleX(1);
+}
+
+/* === Experience timeline === */
+.timeline {
+  position: relative;
+  padding-left: 2rem;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 0.4375rem;
+  top: 0.5rem;
+  bottom: 0.5rem;
+  width: 2px;
+  background: linear-gradient(180deg, var(--gradient-start), var(--gradient-end));
+  opacity: 0.5;
+}
+
+.timeline__item {
+  position: relative;
+  padding-bottom: 2.5rem;
+}
+
+.timeline__item:last-child {
+  padding-bottom: 0;
+}
+
+.timeline__dot {
+  position: absolute;
+  left: -2rem;
+  top: 0.375rem;
+  width: 0.9375rem;
+  height: 0.9375rem;
+  border-radius: 9999px;
+  background: var(--bg-primary);
+  border: 2px solid var(--accent);
+  box-shadow: 0 0 0 4px var(--accent-light);
+}
+
+/* === Project card image === */
+.project-media {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background: var(--bg-secondary);
+}
+
+.project-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.card-hover:hover .project-media img {
+  transform: scale(1.06);
+}
+
+/* === Back to top === */
+#back-to-top {
+  position: fixed;
+  right: 1.25rem;
+  bottom: 1.25rem;
+  z-index: 45;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(12px);
+  transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
+  background: var(--bg-card);
+  box-shadow: var(--shadow-card-hover);
+}
+
+#back-to-top.is-visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* === Contact form === */
+.field {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border-radius: 0.75rem;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+  font: inherit;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.field::placeholder {
+  color: var(--text-secondary);
+  opacity: 0.7;
+}
+
+.field:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-light);
+}
+
+/* ============================================
+   REDUCED MOTION
+   Kill every non-essential animation. Critically, `.reveal` must resolve to
+   its visible state — the old code returned early from the observer and left
+   all content permanently at opacity: 0 for these users.
+   ============================================ */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .js .skill-bar__fill {
+    transform: scaleX(1) !important;
+  }
+}
+
+/* === Print (CV-friendly) === */
+@media print {
+  #main-header,
+  #mobile-nav,
+  #back-to-top,
+  .skip-link {
+    display: none !important;
+  }
+
+  body {
+    background: #fff;
+    color: #000;
+  }
+}
+
+
