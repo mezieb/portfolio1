@@ -127,3 +127,48 @@
 
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 })();
+
+/* --- Tech Badges (Hero) --- */
+(function initTechBadges() {
+  const badges = [
+    { icon: '⚛️', label: 'React' },
+    { icon: '🔷', label: 'TypeScript' },
+    { icon: '📦', label: 'Next.js' },
+    { icon: '🟢', label: 'Node.js' },
+    { icon: '🐘', label: 'PostgreSQL' },
+    { icon: '🐳', label: 'Docker' },
+    { icon: '⚙️', label: 'Express' },
+    { icon: '🎨', label: 'Tailwind' },
+  ];
+
+  const container = document.getElementById('tech-badges');
+  if (!container) return;
+
+  badges.forEach((b, i) => {
+    const span = document.createElement('span');
+    // tailwind classes for badge pills
+    span.className = [
+      'reveal reveal-delay-' + (i < 2 ? '1' : '0'),
+      'inline-flex items-center gap-1',
+      'px-3 py-1.5 rounded-full text-xs font-semibold',
+      transition-all border opacity duration cursor select-none
+    ].join(' ');
+    span.style.cssText = `
+      background: var(--bg-card);
+      color: var(--text-primary);
+      border: 1px solid var(--border-color);
+      opacity: 0;
+      transform: translateY(30px);
+      transition-delay: ${i * 0.05}s;
+    `;
+    span.innerHTML = `${b.icon} <span>${b.label}</span>`;
+    container.appendChild(span);
+
+    // Animate in after a short delay
+    setTimeout(() => {
+      span.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
+      span.style.opacity = '1';
+      span.style.transform = 'translateY(0)';
+    }, 800 + i * 60);
+  });
+})();

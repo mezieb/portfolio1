@@ -93,10 +93,122 @@
 
     <!-- Main Content -->
     <main id="main-content">
-      <!-- ===== Sections will be added in Phase 2 ===== -->
-    </main>
 
-    <!-- Footer rendered dynamically by JS -->
+      <!-- ========= Hero Section ========= -->
+      <section id="hero" class="min-h-screen flex items-center relative overflow-hidden pt-16">
+        <!-- Background gradient blobs -->
+        <div class="absolute inset-0 -z-10">
+          <div class="absolute top-20 left-1/4 w-[500px] h-[500px] rounded-full opacity-20 blur-[120px] animate-pulse" style="background: radial-gradient(circle, var(--gradient-start), transparent);"></div>
+          <div class="absolute bottom-20 right-1/4 w-[400px] h-[400px] rounded-full opacity-15 blur-[120px] animate-pulse" style="background: radial-gradient(circle, var(--gradient-end), transparent); animation-delay: 3s;"></div>
+        </div>
+
+        <div class="container-custom flex flex-col md:flex-row items-center justify-between gap-12 lg:gap-20">
+          <!-- Text Content -->
+          <div class="flex-1 max-w-[640px]">
+            <p class="reveal mb-4 text-[var(--accent)] font-semibold tracking-wide">👋 Hello, I'm</p>
+            <h1 class="reveal reveal-delay-1 text-5xl sm:text-6xl lg:text-[6rem] font-extrabold leading-[1.1]">
+              <span class="gradient-text">Chimezie Bright</span>
+            </h1>
+
+            <!-- Title pill -->
+            <div class="reveal reveal-delay-2 flex items-center gap-3 mt-5 mb-6">
+              <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-semibold" style="background: var(--accent-light); color: var(--accent); border: 1px solid var(--border-color);">
+                <span class="w-2 h-2 rounded-full" style="background: #10b981; box-shadow: 0 0 8px #10b981;"></span>
+                Software Engineer
+              </span>
+            </div>
+
+            <p class="reveal reveal-delay-3 text-[var(--text-secondary)] font-medium leading-relaxed mb-8 max-w-xl">
+              I build modern, scalable web applications that deliver measurable business impact. 
+              Passionate about clean code, seamless user experiences — and turning complex problems into elegant solutions.
+            </p>
+
+            <!-- CTA Buttons -->
+            <div class="reveal reveal-delay-4 flex flex-wrap items-center gap-4 mb-10">
+              <a href="#projects" class="gradient-btn">
+                <span>🔍 View Projects</span>
+              </a>
+              <a href="/resume/Okoro_Chimezie_Bright_Software_Engineer_CV.pdf" target="_blank" rel="noopener noreferrer" class="gradient-btn gradient-btn--ghost">
+                <span>📄 Download CV</span>
+              </a>
+            </div>
+
+            <!-- Tech Stack Pills -->
+            <div class="reveal reveal-delay-4 flex items-center gap-3 flex-wrap">
+              <span class="text-sm text-[var(--text-secondary)]">Tech stack:</span>
+              <div class="flex items-center gap-2 flex-wrap" id="tech-badges"></div>
+            </div>
+          </div>
+
+          <!-- Portrait / Illustration -->
+          <div class="reveal reveal-delay-3 relative flex-shrink-0">
+            <div class="w-[320px] sm:w-[420px] aspect-square rounded-full overflow-hidden glass-card p-3">
+              <img 
+                id="hero-portrait"
+                src="/img/profile/hero-photo.jpg" alt="Chimezie Bright - Software Engineer"
+                class="w-full h-full object-cover rounded-full"
+                loading="eager"
+              />
+            </div>
+            <!-- Floating accent ring -->
+            <div class="absolute -inset-3 rounded-full border-2 opacity-40 animate-spin" style="border-color:var(--gradient-start); border-style:dashed; animation-duration: 20s;"></div>
+          </div>
+        </div>
+
+        <!-- Scroll indicator -->
+        <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-[var(--text-secondary)]">
+          <span class="text-xs tracking-widest uppercase">Scroll</span>
+          <div class="w-5 h-8 border-2 rounded-full flex justify-center" style="border-color: var(--text-secondary);">
+            <div class="w-1.5 h-1.5 rounded-full mt-1.5 animate-bounce" style="background: var(--accent);"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== Sections added in Phase 2 steps 2-6 below ===== -->
+
+      <!-- ========= About Section ========= -->
+      <section id="about" class="section-padding">
+        <div class="container-custom">
+          <h2 class="reveal text-4xl sm:text-5xl font-extrabold mb-16 text-center">
+            <span class="gradient-text">About</span> me
+          </h2>
+
+          <div class="flex flex-col md:flex-row items-center gap-12 lg:gap-16 max-w-6xl mx-auto">
+            <!-- Photo Side -->
+            <div class="reveal reveal-delay-1 w-full max-w-[480px] flex justify-center">
+              <div class="relative group">
+                <div class="w-[280px] sm:w-96 aspect-[3/4] rounded-3xl overflow-hidden glass-card p-4" style="border: 1px solid var(--border-color); background: var(--glass-bg); backdrop-filter: blur(16px);">
+                  <img id="about-photo" src="/img/profile/about-photo.jpg" alt="Chimezie Bright photo"
+                    class="w-full h-full object-cover rounded-2xl"
+                    loading="lazy" decoding="async"
+                  />
+                </div>
+                <!-- Decorative accent corner -->
+                <div class="absolute -bottom-4 -right-4 w-2/3 h-2/3 rounded-2xl border-2 opacity-30"></div>
+              </div>
+            </div>
+
+            <!-- Bio Side -->
+            <div class="reveal reveal-delay-2 flex-1 max-w-xl">
+              <p class="text-lg leading-relaxed mb-6 text-[var(--text-primary)]">
+                I'm <strong>Okoro Chimezie Bright</strong>, a professional 
+                <span class="gradient-text font-semibold">Software Engineer</span> based in Vietnam. With deep passion for mathematics, data analysis, and full-stack web development,
+                I specialize in building scalable applications that solve real-world problems.
+              </p>
+
+              <p class="text-base leading-relaxed mb-8 text-[var(--text-secondary)]">
+                My approach combines clean architecture with pixel-perfect design. I've spent years building solutions
+                for businesses — from landing pages to full e-commerce platforms and SaaS dashboards.
+              </p>
+
+              <!-- Stats Row -->
+              <div class="grid grid-cols-3 gap-4 mb-8 p-6 rounded-2xl" style="background: var(--bg-secondary); border: 1px solid var(--border-color);">
+                <div class="text-center">
+                  <span class="block text-3xl font-extrabold gradient-text" id="stat-years"></span>
+                  <span class="text-xs uppercase tracking-wider text-[var(--text-secondary)]">Years Exp.</span>
+                </div>
+                <div class="text-center border-x-1" style="border-color: var(--border-color);">
+                  <span class="block text-3xl font-extrabold gradient-text" id="stat-projects"></span>
   </div>
 
 </body>
