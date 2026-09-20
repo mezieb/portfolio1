@@ -6,7 +6,9 @@
    `.dark` class on <html>, so the variant must be re-pointed at that class
    or every `dark:` utility in the project is silently inert.
    ============================================ */
+/* stylelint-disable at-rule-no-unknown -- Tailwind CSS v4 directive */
 @custom-variant dark (&:where(.dark, .dark *));
+/* stylelint-enable at-rule-no-unknown */
 
 /* ============================================
    THEME VARIABLES — Dark First Design System
@@ -399,39 +401,6 @@ body.nav-open {
   border-color: var(--accent);
 }
 
-/* ============================================
-   SKILL BARS
-   Level is set in markup as style="--level: 95%" so the values live in the
-   HTML (SEO + no-JS safe) and JS only triggers the fill animation.
-   ============================================ */
-.skill-bar {
-  width: 100%;
-  height: 0.5rem;
-  border-radius: 9999px;
-  background: var(--bg-secondary);
-  border: 1px solid var(--border-color);
-  overflow: hidden;
-}
-
-.skill-bar__fill {
-  display: block;
-  height: 100%;
-  width: var(--level, 0%);
-  border-radius: 9999px;
-  background: linear-gradient(90deg, var(--gradient-start), var(--gradient-end));
-  transform-origin: left;
-}
-
-/* Only animate when JS has opted in; otherwise the bar shows its real width. */
-.js .skill-bar__fill {
-  transform: scaleX(0);
-  transition: transform 1s cubic-bezier(0.22, 1, 0.36, 1);
-}
-
-.js .skill-bar__fill.is-filled {
-  transform: scaleX(1);
-}
-
 /* === Experience timeline === */
 .timeline {
   position: relative;
@@ -532,6 +501,137 @@ body.nav-open {
   box-shadow: 0 0 0 3px var(--accent-light);
 }
 
+/* === Project screenshot lightbox ===
+   Opened by `.is-open` (JS) or `:target` (the no-JS fallback). The closed state
+   uses `visibility` rather than `display`/`aria-hidden` so the subtree leaves
+   both the tab order and the accessibility tree, in either path, and a focused
+   element can never be marked hidden.
+
+   Every colour below is an existing token that `.dark` already overrides, so
+   dark/light support is inherited rather than re-implemented. Reduced motion
+   needs no extra rule: the panel opens by toggling `visibility`/`opacity` via a
+   class — never via `animation` — so the global transition override above makes
+   it snap open instead of getting stuck. */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 60; /* above #mobile-nav (40), #back-to-top (45) and the header (50) */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(0.75rem, 3vw, 2.5rem);
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.25s ease, visibility 0.25s ease;
+}
+
+.lightbox.is-open,
+.lightbox:target {
+  visibility: visible;
+  opacity: 1;
+}
+
+.lightbox__backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(9, 9, 11, 0.82);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+}
+
+.lightbox__panel {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  width: min(100%, 72rem);
+  max-height: min(88vh, 60rem);
+  background: var(--overlay-bg);
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+  border: 1px solid var(--border-color);
+  border-radius: 1.25rem; /* matches .card */
+  box-shadow: var(--shadow-card-hover);
+  overflow: hidden;
+  transform: translateY(16px) scale(0.98);
+  transition: transform 0.25s ease;
+  /* Best-effort: keeps the screenshot PNGs out of the render path until the
+     panel is opened. Purely an optimisation — ignored where unsupported. */
+  content-visibility: hidden;
+}
+
+.lightbox.is-open .lightbox__panel,
+.lightbox:target .lightbox__panel {
+  transform: none;
+  content-visibility: visible;
+}
+
+.lightbox__head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.25rem 1.5rem;
+  border-bottom: 1px solid var(--border-color);
+  /* Never compressed by the body's scrollable overflow. */
+  flex-shrink: 0;
+}
+
+.lightbox__body {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 1.5rem;
+  overflow-y: auto;
+  /* Stops scroll chaining to the page behind once the screenshot list ends.
+     Matters most in the no-JS `:target` path, which has no body scroll-lock. */
+  overscroll-behavior: contain;
+}
+
+/* `flex-shrink: 0` here is load-bearing, not decoration — do not remove it.
+   These are flex items in the column-flex `.lightbox__body`. With the default
+   `flex-shrink: 1` they squash to fit the panel instead of overflowing it,
+   because `min-height: auto` only resolves to content size when `overflow` is
+   `visible` — and `overflow: hidden` is required here to clip the image to the
+   rounded corners. Squashed *and* clipped, only the top slice of each screenshot
+   showed, worst on wide viewports where the images render tallest. Pinning the
+   height lets `.lightbox__body` overflow so its `overflow-y: auto` scrolls. */
+.lightbox__figure {
+  flex-shrink: 0;
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+  border-radius: 1rem;
+  background: var(--bg-secondary);
+}
+
+/* Fills the panel width and keeps the intrinsic ratio. The resulting height is
+   exactly what overflows `.lightbox__body` — scrolling there is intended. */
+.lightbox__figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.lightbox__figure figcaption {
+  padding: 0.625rem 0.875rem;
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  border-top: 1px solid var(--border-color);
+}
+
+.lightbox__foot {
+  padding: 0.875rem 1.5rem;
+  border-top: 1px solid var(--border-color);
+  /* Never compressed by the body's scrollable overflow. */
+  flex-shrink: 0;
+}
+
+/* Lock scrolling behind the lightbox — mirrors the existing body.nav-open. */
+body.lightbox-open {
+  overflow: hidden;
+}
+
 /* ============================================
    REDUCED MOTION
    Kill every non-essential animation. Critically, `.reveal` must resolve to
@@ -556,10 +656,6 @@ body.nav-open {
     opacity: 1 !important;
     transform: none !important;
   }
-
-  .js .skill-bar__fill {
-    transform: scaleX(1) !important;
-  }
 }
 
 /* === Print (CV-friendly) === */
@@ -567,6 +663,7 @@ body.nav-open {
   #main-header,
   #mobile-nav,
   #back-to-top,
+  .lightbox,
   .skip-link {
     display: none !important;
   }

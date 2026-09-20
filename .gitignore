@@ -7,7 +7,14 @@ dist/
 .env.*.local
 
 # IDE
-.vscode/
+# `.vscode/*` (not `.vscode/`) so the negation below can take effect — git will
+# not descend into a directory ignored by a trailing-slash pattern, which would
+# make `!.vscode/settings.json` dead. Only settings.json is tracked: it pins the
+# editor to the workspace TypeScript, which stops VS Code's newer bundled tsserver
+# from offering the "add ignoreDeprecations" quick fix that writes a value the
+# project's tsc rejects (TS5103) and breaks `npm run build`.
+.vscode/*
+!.vscode/settings.json
 .idea/
 *.swp
 *.swo

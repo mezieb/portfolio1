@@ -59,16 +59,16 @@ No framework runtime, no icon font, no third-party JS.
 │   │   ├── brand/          # logo.jpg
 │   │   ├── logos/          # logo.svg, apple-touch-icon.png
 │   │   ├── profile/        # hero-photo.jpg, about-photo.jpg
-│   │   ├── projects/       # coding.jpg, plan.jpg, respweb.jpg
+│   │   ├── projects/       # sp_admin/appointment/frontend, kingcruise, cb_portfolio (.png)
 │   │   └── testimonials/   # mayflor.jpg, dr-emma.jpg, dao-ha.jpg
 │   └── resume/             # CV PDF
 └── src/
     ├── main.ts             # Entry: imports CSS, calls boot()
     ├── app.ts              # Boot orchestrator for every module
     ├── index.css           # Tokens, utilities, components, a11y, motion
-    ├── components/         # themeToggle, header, mobileMenu, backToTop,
-    │                       # footerYear, contactForm
-    ├── hooks/              # useReveal, useCountUp, useSkillBars, useActiveSection
+    ├── components/         # themeToggle, header, mobileMenu, projectModal,
+    │                       # backToTop, footerYear, contactForm
+    ├── hooks/              # useReveal, useCountUp, useActiveSection
     └── utils/              # dom.ts ($, $$, on, rafThrottle), motion.ts
 ```
 ## Architecture: content in HTML, behaviour in TypeScript
@@ -111,13 +111,47 @@ Netlify Forms with progressive enhancement:
 > **Note:** form handling only exists on Netlify. During `npm run dev` the POST
 > is answered by the Vite dev server. Test real submissions on a deploy preview.
 
+## Project Lightbox
+
+The Service Provider Platform card opens a screenshot panel. Same doctrine as
+the contact form — two working paths:
+
+- **Without JS:** the trigger is an `<a href="#project-modal">`, so the CSS
+  `:target` rule opens the panel and the close anchor dismisses it. Nothing is
+  dead in the no-scripting path.
+- **With JS:** `src/components/projectModal.ts` intercepts the click and drives
+  an `.is-open` class instead (the hash is never set), which adds Escape-to-close,
+  a focus trap, focus restoration to the trigger and body scroll-lock.
+
+The closed panel uses `visibility: hidden` rather than `aria-hidden="true"`.
+That removes the subtree from both the accessibility tree and the tab order in
+either path, and it avoids the usual modal bug of marking a focused element as
+hidden. `prefers-reduced-motion` needs no extra rule: the panel opens by toggling
+a class, never via `animation`, so the existing global transition override makes
+it snap open.
+
+`.lightbox` sits at `z-index: 60` — above `#mobile-nav` (40), `#back-to-top` (45)
+and the header (50), below the skip link (100). Every colour it uses is an
+existing design token that `.dark` already overrides, so theming is inherited.
+
+Screenshots render at the panel's full width with their intrinsic aspect ratio
+(`width: 100%; height: auto`) and are never cropped — there is no `object-fit`
+anywhere in the panel. The three screenshots are taller than the panel, so
+`.lightbox__body` scrolls. `.lightbox__figure` therefore carries
+`flex-shrink: 0`: without it these column-flex items would squash to fit the
+panel rather than overflow it, because `min-height: auto` only resolves to
+content size when `overflow` is `visible`, and `overflow: hidden` is required
+there to clip the image to the rounded corners. The header and footer are pinned
+the same way. `overscroll-behavior: contain` keeps the scroll from chaining to
+the page behind, which matters in the no-JS path that has no body scroll-lock.
+
 ## SEO & Accessibility
 
 - Canonical URL, Open Graph (1200×630 image + dimensions), Twitter Card
 - JSON-LD `Person` + `WebSite` structured data
 - `robots.txt`, `sitemap.xml`, `manifest.webmanifest`, custom `404.html`
 - Skip-to-content link, `:focus-visible` ring, ARIA landmarks and labels
-- Skill bars use `role="progressbar"` with `aria-valuenow`
+- Skill groups are badge lists (`<li class="tag">`) with an `aria-label` per category
 - Testimonials use `<figure>` / `<blockquote>` / `<cite>`
 - Exactly one `<h1>`; every image has `alt` plus explicit `width`/`height`
 - Full `prefers-reduced-motion` support — and content is never left hidden
@@ -149,7 +183,7 @@ Enable **Force HTTPS** in Netlify's domain settings.
 | --- | --- |
 | Bio, headline, copy | `index.html` — the relevant `<section>` |
 | Stat numbers | `index.html` — `data-count-to` / `data-count-suffix` **and** the fallback text inside the span |
-| Skill percentages | `index.html` — `--level`, `aria-valuenow`, `aria-label` and the visible `%` |
+| Skill lists | `index.html` — `#skills` badge `<li class="tag">` items inside each category card |
 | Work history | `index.html` — `#experience` (see the EDIT REQUIRED banner) |
 | Projects / links | `index.html` — `#projects` |
 | Colours | `src/index.css` — the `:root` and `.dark` token blocks |
@@ -163,7 +197,13 @@ Chrome 90+, Firefox 88+, Safari 14+, Edge 90+. No IE11.
 
 - [ ] Replace the `#experience` template entries with real employment history
 - [ ] Confirm the About stat figures (years / projects / clients) are accurate
-- [ ] Swap the three reused project screenshots for real ones
+- [x] Swap the three reused project screenshots for real ones
+- [ ] **Optimise the project screenshots** — they are currently raw PNGs
+      (`kingcruise.png` 4.5 MB, `cb_portfolio.png` 1.1 MB, `sp_*.png` ~250-300 KB
+      each, ~6.7 MB total). Resize and re-encode to 640/1280/1920 px WebP + JPEG
+      and serve via `<picture>`/`srcset`. Needs `sharp`, ImageMagick or `cwebp`.
+- [ ] Delete the now-unused `coding.jpg`, `plan.jpg` and `respweb.jpg` from
+      `public/img/projects/` once you are happy with the new cards
 - [ ] Add 192×192 and 512×512 PNG icons for a fully installable manifest
 - [ ] Test a live form submission on a Netlify deploy preview
 - [ ] Uncomment and verify the CSP on a preview URL
